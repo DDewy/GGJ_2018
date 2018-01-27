@@ -72,28 +72,7 @@ public class SquareGridCreatorInspector : Editor
     {
         SquareGridCreator creator = (SquareGridCreator)target;
 
-        BaseTile[][] TempArray = creator.GridArray;
-
-        if(TempArray == null)
-        {
-            while(creator.transform.childCount > 0)
-            {
-                DestroyImmediate(creator.transform.GetChild(0).gameObject);
-            }
-            return;
-        }
-
-
-        for(int i = 0; i < TempArray.Length; i++)
-        {
-            for(int p = 0; p < TempArray[i].Length; p++)
-            {
-                DestroyImmediate(TempArray[i][p].gameObject);
-                TempArray[i][p] = null;
-            }
-        }
-
-        creator.GridArray = null;
+        creator.ClearGrid();
     }
 
     void RefreshGrid()
