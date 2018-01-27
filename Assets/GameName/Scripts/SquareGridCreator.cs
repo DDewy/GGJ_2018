@@ -58,23 +58,26 @@ public class SquareGridCreator : MonoBehaviour {
             Vector2Int tempPosition = nullPosition;
             
             //Check if this Position is a Satalite
-            ReflectSatellite satalite = NextPostion.GetComponent<ReflectSatellite>();
-            if(satalite != null)
+            
+            if(NextPostion.tileType == BaseTile.TileTypes.Satalite)
             {
                 //This is a satalite, this will update our heading
-                LastKnownHeading = satalite.ReflectDirection;
+                LastKnownHeading = NextPostion.GetComponent<ReflectSatellite>().ReflectDirection;
                 ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
             }
-            else
+            else if(NextPostion.tileType == BaseTile.TileTypes.LightTarget)
             {
-                //Check if it is a Target Goal
-                if(NextPostion.GetComponent<TargetTile>() != null)
-                {
-                    //TODO Check if the Color is the right Colour for this target
-                    ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
-                    NextPostion = null;
-                    break;
-                }
+                //TODO Check if the Color is the right Colour for this target
+                ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
+                NextPostion = null;
+                break;
+            }
+            else if(NextPostion.tileType == BaseTile.TileTypes.Asteroid)
+            {
+                //End Here, Hit an Asteroid
+                ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
+                NextPostion = null;
+                break;
             }
 
             //Basic Tile, Keep Heading in Direction and Till we reach the end
