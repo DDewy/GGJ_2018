@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 4}
+  tileType: 0
 --- !u!212 &392537
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -241,6 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 7}
+  tileType: 0
 --- !u!212 &8527161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -327,6 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 6}
+  tileType: 0
 --- !u!212 &20220811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -413,6 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 10}
+  tileType: 0
 --- !u!212 &23682537
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -499,6 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 10}
+  tileType: 0
 --- !u!212 &34153776
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -585,6 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 4}
+  tileType: 0
 --- !u!212 &45079653
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -671,6 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 2}
+  tileType: 0
 --- !u!212 &70893760
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -757,6 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 5}
+  tileType: 0
 --- !u!212 &78294666
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -843,6 +851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 7}
+  tileType: 0
 --- !u!212 &80364044
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -929,6 +938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 15}
+  tileType: 0
 --- !u!212 &104601869
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1011,10 +1021,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 114450938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
+  m_Script: {fileID: 123858600}
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 3}
+  tileType: 2
+  ReflectDirection: {x: 1, y: -1}
 --- !u!212 &114450941
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1050,7 +1062,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1bce4a560e549fc4a98bdb22fe9007c3, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1101,6 +1113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 1}
+  tileType: 0
 --- !u!212 &114715615
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1202,6 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 12}
+  tileType: 0
 --- !u!212 &125417123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1288,6 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 11}
+  tileType: 0
 --- !u!212 &132305470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1374,6 +1389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 1}
+  tileType: 0
 --- !u!212 &138260878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1460,6 +1476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 13}
+  tileType: 0
 --- !u!212 &151831108
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1611,6 +1628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 13}
+  tileType: 0
 --- !u!212 &162680429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1697,6 +1715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 2}
+  tileType: 0
 --- !u!212 &170651628
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1783,6 +1802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 14}
+  tileType: 0
 --- !u!212 &173753436
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1869,6 +1889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 10}
+  tileType: 0
 --- !u!212 &184894973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1955,6 +1976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 10}
+  tileType: 0
 --- !u!212 &186002546
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2041,6 +2063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 7}
+  tileType: 0
 --- !u!212 &188810621
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2127,6 +2150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 2}
+  tileType: 0
 --- !u!212 &189426161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2213,6 +2237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 9}
+  tileType: 0
 --- !u!212 &195480549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2299,6 +2324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 15}
+  tileType: 0
 --- !u!212 &210096762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2385,6 +2411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 7}
+  tileType: 0
 --- !u!212 &218406056
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2471,6 +2498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 15}
+  tileType: 0
 --- !u!212 &231454767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2557,6 +2585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 3}
+  tileType: 0
 --- !u!212 &235664135
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2643,6 +2672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 1}
+  tileType: 0
 --- !u!212 &247126699
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2729,6 +2759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 6}
+  tileType: 0
 --- !u!212 &262349390
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2815,6 +2846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 7}
+  tileType: 0
 --- !u!212 &268289461
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2901,6 +2933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 8}
+  tileType: 0
 --- !u!212 &269840480
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2987,6 +3020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 5}
+  tileType: 0
 --- !u!212 &283075796
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3073,6 +3107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 0}
+  tileType: 0
 --- !u!212 &301862387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3159,6 +3194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 3}
+  tileType: 0
 --- !u!212 &304264248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3245,6 +3281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 12}
+  tileType: 0
 --- !u!212 &316637191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3331,6 +3368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 14}
+  tileType: 0
 --- !u!212 &333232392
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3417,6 +3455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 5}
+  tileType: 0
 --- !u!212 &345740725
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3503,6 +3542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 14}
+  tileType: 0
 --- !u!212 &363158423
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3589,6 +3629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 13}
+  tileType: 0
 --- !u!212 &363423851
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3675,6 +3716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 8}
+  tileType: 0
 --- !u!212 &377292642
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3761,6 +3803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 8}
+  tileType: 0
 --- !u!212 &381001262
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3847,6 +3890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 5}
+  tileType: 0
 --- !u!212 &395371891
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3933,6 +3977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 15}
+  tileType: 0
 --- !u!212 &401803867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4019,6 +4064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 9}
+  tileType: 0
 --- !u!212 &431029995
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4105,6 +4151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 0}
+  tileType: 0
 --- !u!212 &454226502
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4191,6 +4238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 14}
+  tileType: 0
 --- !u!212 &461949476
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4277,6 +4325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 1}
+  tileType: 0
 --- !u!212 &467777173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4363,6 +4412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 16}
+  tileType: 0
 --- !u!212 &478260143
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4449,6 +4499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 14}
+  tileType: 0
 --- !u!212 &516407595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4535,6 +4586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 15}
+  tileType: 0
 --- !u!212 &530977172
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4621,6 +4673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 3}
+  tileType: 0
 --- !u!212 &531029920
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4707,6 +4760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 15}
+  tileType: 0
 --- !u!212 &538463427
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4793,6 +4847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 9}
+  tileType: 0
 --- !u!212 &609635461
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4879,6 +4934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 3}
+  tileType: 0
 --- !u!212 &641087412
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4965,6 +5021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 9}
+  tileType: 0
 --- !u!212 &649614668
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5047,10 +5104,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 662504087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e4ba7c7570a1484d9b3e9e5f98e9143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 0}
+  tileType: 0
 --- !u!212 &662504090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5086,7 +5144,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1bce4a560e549fc4a98bdb22fe9007c3, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5137,6 +5195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 7}
+  tileType: 0
 --- !u!212 &667797896
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5223,6 +5282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 12}
+  tileType: 0
 --- !u!212 &677868610
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5309,6 +5369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 6}
+  tileType: 0
 --- !u!212 &679327569
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5395,6 +5456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 9}
+  tileType: 0
 --- !u!212 &684656909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5481,6 +5543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 8}
+  tileType: 0
 --- !u!212 &739208388
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5567,6 +5630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 16}
+  tileType: 0
 --- !u!212 &749854172
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5653,6 +5717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 15}
+  tileType: 0
 --- !u!212 &761673620
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5739,6 +5804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 4}
+  tileType: 0
 --- !u!212 &770602354
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5825,6 +5891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 3}
+  tileType: 0
 --- !u!212 &771127537
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5911,6 +5978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 3}
+  tileType: 0
 --- !u!212 &780656512
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5997,6 +6065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 0}
+  tileType: 0
 --- !u!212 &780779962
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6083,6 +6152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 11}
+  tileType: 0
 --- !u!212 &783693888
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6169,6 +6239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 10}
+  tileType: 0
 --- !u!212 &804610244
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6255,6 +6326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 3}
+  tileType: 0
 --- !u!212 &824628806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6341,6 +6413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 9}
+  tileType: 0
 --- !u!212 &875543118
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6427,6 +6500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 11}
+  tileType: 0
   ReflectDirection: {x: -1, y: 0}
 --- !u!212 &885248272
 SpriteRenderer:
@@ -6514,6 +6588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 13}
+  tileType: 0
 --- !u!212 &903124583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6600,6 +6675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 4}
+  tileType: 0
 --- !u!212 &919468022
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6695,7 +6771,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 10
   m_Depth: -1
   m_CullingMask:
@@ -6719,7 +6795,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 941548596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: -5}
+  m_LocalPosition: {x: 0, y: -0.5, z: -17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6767,6 +6843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 5}
+  tileType: 0
 --- !u!212 &956548234
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6853,6 +6930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 11}
+  tileType: 0
 --- !u!212 &961744701
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6939,6 +7017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 15}
+  tileType: 0
 --- !u!212 &996752849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7025,6 +7104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 4}
+  tileType: 0
 --- !u!212 &1005254236
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7111,6 +7191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 4}
+  tileType: 0
 --- !u!212 &1022812214
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7197,6 +7278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 9}
+  tileType: 0
 --- !u!212 &1047250646
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7283,6 +7365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 6}
+  tileType: 0
 --- !u!212 &1048933294
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7369,6 +7452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 6}
+  tileType: 0
 --- !u!212 &1050590545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7455,6 +7539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 15}
+  tileType: 0
 --- !u!212 &1053845481
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7541,6 +7626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 7}
+  tileType: 0
 --- !u!212 &1064006864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7627,6 +7713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 16}
+  tileType: 0
 --- !u!212 &1070124418
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7713,6 +7800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 14}
+  tileType: 0
 --- !u!212 &1077886946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7799,6 +7887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 10}
+  tileType: 0
 --- !u!212 &1090869387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7885,6 +7974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 0}
+  tileType: 0
 --- !u!212 &1109589039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7971,6 +8061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 8}
+  tileType: 0
 --- !u!212 &1125257750
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8057,6 +8148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 16}
+  tileType: 0
 --- !u!212 &1127052867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8143,6 +8235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 2}
+  tileType: 0
 --- !u!212 &1159127997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8229,6 +8322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 0}
+  tileType: 0
 --- !u!212 &1165688207
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8315,6 +8409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 13}
+  tileType: 0
 --- !u!212 &1184999450
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8401,6 +8496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 1}
+  tileType: 0
 --- !u!212 &1200983202
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8487,6 +8583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 4}
+  tileType: 0
 --- !u!212 &1201088362
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8573,6 +8670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 0}
+  tileType: 0
 --- !u!212 &1208970428
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8659,6 +8757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 11}
+  tileType: 0
   ReflectDirection: {x: 0, y: -1}
 --- !u!212 &1210064711
 SpriteRenderer:
@@ -8746,6 +8845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 1}
+  tileType: 0
 --- !u!212 &1221925241
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8832,6 +8932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 6}
+  tileType: 0
 --- !u!212 &1224231575
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8918,6 +9019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 4}
+  tileType: 0
 --- !u!212 &1235883694
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9004,6 +9106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 15}
+  tileType: 0
 --- !u!212 &1242596684
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9090,6 +9193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 14}
+  tileType: 0
 --- !u!212 &1252903918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9176,6 +9280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 11}
+  tileType: 0
 --- !u!212 &1269487722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9262,6 +9367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 2}
+  tileType: 0
 --- !u!212 &1311265201
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9348,6 +9454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 11}
+  tileType: 0
 --- !u!212 &1325652608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9434,6 +9541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 14}
+  tileType: 0
 --- !u!212 &1329917335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9520,6 +9628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 2}
+  tileType: 0
 --- !u!212 &1343617083
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9606,6 +9715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 8}
+  tileType: 0
 --- !u!212 &1367602508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9692,6 +9802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 6}
+  tileType: 0
 --- !u!212 &1368444528
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9778,6 +9889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 1}
+  tileType: 0
 --- !u!212 &1379486561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9864,6 +9976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 6}
+  tileType: 0
 --- !u!212 &1400594243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9950,6 +10063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 5}
+  tileType: 0
   ReflectDirection: {x: 0, y: -1}
 --- !u!212 &1406463928
 SpriteRenderer:
@@ -9995,123 +10109,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &1406784026
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1406784028}
-  - component: {fileID: 1406784027}
-  m_Layer: 0
-  m_Name: Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!120 &1406784027
-LineRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1406784026}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 2a0f74b839b8c2d4fb213f632c60e508, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 1, y: 1, z: 0}
-  m_Parameters:
-    serializedVersion: 2
-    widthMultiplier: 0.3
-    widthCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 0, b: 0, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 1}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65150
-      atime2: 65535
-      atime3: 0
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
-    alignment: 0
-    textureMode: 0
-    generateLightingData: 0
-  m_UseWorldSpace: 1
-  m_Loop: 0
---- !u!4 &1406784028
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1406784026}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1406970201
 GameObject:
   m_ObjectHideFlags: 0
@@ -10154,6 +10151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 9}
+  tileType: 0
 --- !u!212 &1406970204
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10240,6 +10238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 13}
+  tileType: 0
 --- !u!212 &1424957495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10326,6 +10325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 7}
+  tileType: 0
 --- !u!212 &1429499515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10412,6 +10412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 12}
+  tileType: 0
 --- !u!212 &1430237244
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10498,6 +10499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 8}
+  tileType: 0
 --- !u!212 &1432557007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10584,6 +10586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 16}
+  tileType: 0
 --- !u!212 &1435938412
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10670,6 +10673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 12}
+  tileType: 0
 --- !u!212 &1457518941
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10756,6 +10760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 12}
+  tileType: 0
 --- !u!212 &1466738599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10842,6 +10847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 13}
+  tileType: 0
 --- !u!212 &1479900956
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10928,6 +10934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 3}
+  tileType: 0
 --- !u!212 &1495084295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11014,6 +11021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 6}
+  tileType: 0
 --- !u!212 &1500209240
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11100,6 +11108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 8}
+  tileType: 0
 --- !u!212 &1511965549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11186,6 +11195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 5}
+  tileType: 0
   ReflectDirection: {x: 1, y: 0}
 --- !u!212 &1516811724
 SpriteRenderer:
@@ -11273,6 +11283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 1}
+  tileType: 0
 --- !u!212 &1537521344
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11359,6 +11370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 5}
+  tileType: 0
 --- !u!212 &1540987359
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11445,6 +11457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 11}
+  tileType: 0
 --- !u!212 &1546352094
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11531,6 +11544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 12}
+  tileType: 0
 --- !u!212 &1547958585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11617,6 +11631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 7}
+  tileType: 0
 --- !u!212 &1562177634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11703,6 +11718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 14}
+  tileType: 0
 --- !u!212 &1604499520
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11789,6 +11805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 11}
+  tileType: 0
 --- !u!212 &1634405135
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11875,6 +11892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 16}
+  tileType: 0
 --- !u!212 &1639944750
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11961,6 +11979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 0}
+  tileType: 0
 --- !u!212 &1645133083
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12047,6 +12066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 2}
+  tileType: 0
 --- !u!212 &1664361473
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12133,6 +12153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 11}
+  tileType: 0
 --- !u!212 &1666602463
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12219,6 +12240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 3}
+  tileType: 0
 --- !u!212 &1671317971
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12305,6 +12327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 0}
+  tileType: 0
 --- !u!212 &1683445692
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12391,6 +12414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 4}
+  tileType: 0
 --- !u!212 &1690178592
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12477,6 +12501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 10}
+  tileType: 0
 --- !u!212 &1691812854
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12563,6 +12588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 16}
+  tileType: 0
 --- !u!212 &1695170163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12649,6 +12675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 1}
+  tileType: 0
 --- !u!212 &1707101574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12735,6 +12762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 0}
+  tileType: 0
 --- !u!212 &1758631312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12821,6 +12849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 12}
+  tileType: 0
 --- !u!212 &1762246898
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12907,6 +12936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 7}
+  tileType: 0
 --- !u!212 &1777596616
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12993,6 +13023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 9}
+  tileType: 0
 --- !u!212 &1781412648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13079,6 +13110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 4}
+  tileType: 0
 --- !u!212 &1789013892
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13165,6 +13197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 4}
+  tileType: 0
 --- !u!212 &1790752044
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13251,6 +13284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 16}
+  tileType: 0
   LightPositions: []
   LightDirection: {x: 1, y: 0}
 --- !u!212 &1800509893
@@ -13339,6 +13373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 15}
+  tileType: 0
 --- !u!212 &1820027826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13425,6 +13460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 6}
+  tileType: 0
 --- !u!212 &1822863391
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13511,6 +13547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 8}
+  tileType: 0
 --- !u!212 &1824402315
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13597,6 +13634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 2, y: 5}
+  tileType: 0
 --- !u!212 &1825891945
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13683,6 +13721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 12}
+  tileType: 0
 --- !u!212 &1828201428
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13769,6 +13808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 8}
+  tileType: 0
 --- !u!212 &1837865984
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13855,6 +13895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 10}
+  tileType: 0
 --- !u!212 &1864897189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13941,6 +13982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 8}
+  tileType: 0
   ReflectDirection: {x: -1, y: -1}
 --- !u!212 &1868509464
 SpriteRenderer:
@@ -14028,6 +14070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 3, y: 10}
+  tileType: 0
 --- !u!212 &1870438509
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14114,6 +14157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 1}
+  tileType: 0
 --- !u!212 &1873528074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14200,6 +14244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 16}
+  tileType: 0
 --- !u!212 &1897867131
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14286,6 +14331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 5}
+  tileType: 0
 --- !u!212 &1920947425
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14372,6 +14418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 12}
+  tileType: 0
 --- !u!212 &1926331545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14458,6 +14505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 2}
+  tileType: 0
 --- !u!212 &1946753823
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14544,6 +14592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 13}
+  tileType: 0
   ReflectDirection: {x: 0, y: -1}
 --- !u!212 &1956818181
 SpriteRenderer:
@@ -14631,6 +14680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 6}
+  tileType: 0
 --- !u!212 &1957075118
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14717,6 +14767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 14}
+  tileType: 0
 --- !u!212 &1966130111
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14803,6 +14854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 2}
+  tileType: 0
 --- !u!212 &1975094933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14889,6 +14941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 10}
+  tileType: 0
 --- !u!212 &1987822984
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14971,10 +15024,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1992689731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
+  m_Script: {fileID: 123858600}
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 3}
+  tileType: 2
+  ReflectDirection: {x: -1, y: 0}
 --- !u!212 &1992689734
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15010,7 +15065,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1bce4a560e549fc4a98bdb22fe9007c3, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15061,6 +15116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 6, y: 16}
+  tileType: 0
 --- !u!212 &1996333428
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15147,6 +15203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 13}
+  tileType: 0
   ReflectDirection: {x: 1, y: 0}
 --- !u!212 &1999475200
 SpriteRenderer:
@@ -15234,6 +15291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 11}
+  tileType: 0
 --- !u!212 &2005649030
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15320,6 +15378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 1, y: 9}
+  tileType: 0
 --- !u!212 &2024294310
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15406,6 +15465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 0, y: 5}
+  tileType: 0
 --- !u!212 &2024434709
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15492,6 +15552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 16}
+  tileType: 0
   ReflectDirection: {x: 0, y: -1}
 --- !u!212 &2026507700
 SpriteRenderer:
@@ -15579,6 +15640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 14}
+  tileType: 0
 --- !u!212 &2054314506
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15665,6 +15727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 2}
+  tileType: 0
 --- !u!212 &2056874471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15751,6 +15814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 1}
+  tileType: 0
 --- !u!212 &2086168810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15837,6 +15901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 9, y: 2}
+  tileType: 0
 --- !u!212 &2095071464
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15923,6 +15988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 7}
+  tileType: 0
 --- !u!212 &2095705984
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16009,6 +16075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 0}
+  tileType: 0
 --- !u!212 &2104722083
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16095,6 +16162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 10, y: 13}
+  tileType: 0
 --- !u!212 &2106087105
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16181,6 +16249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 5, y: 10}
+  tileType: 0
 --- !u!212 &2124400705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16267,6 +16336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 4, y: 13}
+  tileType: 0
 --- !u!212 &2124623681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16353,6 +16423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 8, y: 9}
+  tileType: 0
 --- !u!212 &2128531096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16670,6 +16741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrayPosition: {x: 7, y: 12}
+  tileType: 0
 --- !u!212 &2133927201
 SpriteRenderer:
   m_ObjectHideFlags: 0

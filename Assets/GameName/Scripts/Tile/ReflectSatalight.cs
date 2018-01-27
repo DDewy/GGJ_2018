@@ -26,5 +26,13 @@ public class ReflectSatellite : BaseTile
         {
             sprite.color = Color.blue;
         }
+
+        tileType = TileTypes.Satalite;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 tempVec = ((Vector2)ReflectDirection);
+        Gizmos.DrawLine(transform.position, transform.position + tempVec);
     }
 }
