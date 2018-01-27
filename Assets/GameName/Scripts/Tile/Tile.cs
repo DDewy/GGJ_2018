@@ -21,6 +21,8 @@ public class Tile : BaseTile
         {
             sprite.color = Color.black;
         }
+
+        tileType = TileTypes.Tile;
     }
 
 

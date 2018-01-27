@@ -68,8 +68,7 @@ public class SquareGridCreator : MonoBehaviour {
             else
             {
                 //Check if it is a Target Goal
-                TargetTile target = NextPostion.GetComponent<TargetTile>();
-                if(target != null)
+                if(NextPostion.GetComponent<TargetTile>() != null)
                 {
                     //TODO Check if the Color is the right Colour for this target
                     ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);

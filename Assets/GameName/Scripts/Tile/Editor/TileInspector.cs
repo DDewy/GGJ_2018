@@ -34,6 +34,11 @@ public class TileInspector : Editor {
             ChangeTo(Tile.TileTypes.LightTarget);
         }
 
+        if(GUILayout.Button("Asteroid"))
+        {
+            ChangeTo(Tile.TileTypes.Asteroid);
+        }
+
         EditorGUILayout.EndHorizontal();
     }
 
@@ -58,7 +63,11 @@ public class TileInspector : Editor {
                 break;
 
             case Tile.TileTypes.LightTarget:
-                newTile = oldTile.gameObject.AddComponent<LightOutput>();
+                newTile = oldTile.gameObject.AddComponent<TargetTile>();
+                break;
+
+            case Tile.TileTypes.Asteroid:
+                newTile = oldTile.gameObject.AddComponent<AsteroidTile>();
                 break;
         }
 
@@ -89,6 +98,12 @@ public class TargetTileInspector : TileInspector
 
 [CustomEditor(typeof(LightOutput))]
 public class LightOutputInspector : TileInspector
+{
+
+}
+
+[CustomEditor(typeof(AsteroidTile))]
+public class AsteroidTileInspector : TileInspector
 {
 
 }

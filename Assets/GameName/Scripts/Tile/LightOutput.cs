@@ -7,6 +7,8 @@ public class LightOutput : BaseTile
     public Vector2Int[] LightPositions;
     public Vector2Int LightDirection;
 
+    private LineRenderer lineRenderer;
+
     IEnumerator Start()
     {
         yield return new WaitForSeconds(2.0f);
@@ -32,5 +34,15 @@ public class LightOutput : BaseTile
         {
             sprite.color = Color.red;
         }
+
+        tileType = TileTypes.LightOutput;
+
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+
+    }
+
+    protected virtual void SetUpLineRenderer(LineRenderer renderer)
+    {
+        renderer.widthMultiplier = 0.3f;
     }
 }

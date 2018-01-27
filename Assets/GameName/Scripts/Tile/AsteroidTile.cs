@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetTile : BaseTile
+public class AsteroidTile : BaseTile
 {
+
     public override void AssignNewTile(Vector2Int arrayPosition)
     {
         base.AssignNewTile(arrayPosition);
@@ -12,9 +13,9 @@ public class TargetTile : BaseTile
 
         if (sprite != null)
         {
-            sprite.color = Color.green;
+            sprite.color = Color.magenta;
         }
 
-        tileType = TileTypes.LightTarget;
+        tileType = TileTypes.Asteroid;
     }
 }
