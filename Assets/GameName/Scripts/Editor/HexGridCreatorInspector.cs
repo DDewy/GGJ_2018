@@ -21,11 +21,5 @@ public class HexGridCreatorInspector : Editor {
     void CreateGrid()
     {
         HexGridCreator creator = (HexGridCreator)target;
-
-        GameObject[][][] tempGrid = new GameObject[(creator.Width * 2) + 1][][];
-        
-        
-
-
     }
 }
