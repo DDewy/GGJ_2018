@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 22779376}
   - component: {fileID: 22779375}
   - component: {fileID: 22779374}
+  - component: {fileID: 22779378}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -197,6 +198,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &22779378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 22779373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad79e0420c93bb247a74d56a4cca3cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wubColour: {r: 2, g: 3, b: 1, a: 1}
+  addColour: {r: 1, g: 0, b: 0, a: 0}
 --- !u!1 &84442936
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +553,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1018559313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1018559314}
+  - component: {fileID: 1018559315}
+  m_Layer: 0
+  m_Name: LevelEditor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1018559314
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1018559313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.1973944, y: -1.1705525, z: -2.5200396}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1018559315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1018559313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad6fbd2275c0a14ebce37b56666e6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  writeThis: sup
 --- !u!1 &1024543740
 GameObject:
   m_ObjectHideFlags: 0
