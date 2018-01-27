@@ -10,6 +10,8 @@ public class SquareGridCreatorInspector : Editor
     {
         base.OnInspectorGUI();
 
+        SquareGridCreator creator = (SquareGridCreator)target;
+
         if(GUILayout.Button("Create Grid"))
         {
             CreateGrid();
@@ -18,6 +20,18 @@ public class SquareGridCreatorInspector : Editor
         if(GUILayout.Button("Clear Grid"))
         {
             ClearGrid();
+        }
+
+        if(GUILayout.Button("Refresh Grid"))
+        {
+            RefreshGrid();
+        }
+
+        GUILayout.Label(creator.GridArray == null ? "Grid Needs Refreshing" : "Grid Reference is Fine");
+
+        if(GUILayout.Button("Rename Grid"))
+        {
+            RenameChildren();
         }
     }
 
@@ -80,5 +94,58 @@ public class SquareGridCreatorInspector : Editor
         }
 
         creator.GridArray = null;
+    }
+
+    void RefreshGrid()
+    {
+        SquareGridCreator creator = (SquareGridCreator)target;
+        //Initalize Grid
+        BaseTile[][] TempGridRef = new BaseTile[creator.Width][];
+
+        for (int i = 0; i < TempGridRef.Length; i++)
+        {
+            TempGridRef[i] = new Tile[creator.Height];
+        }
+
+        for (int i = 0; i < creator.transform.childCount; i++)
+        {
+            Transform tileTrans = creator.transform.GetChild(i);
+            BaseTile tempTile = tileTrans.GetComponent<BaseTile>();
+
+            Debug.Log("FoundTile");
+
+            TempGridRef[tempTile.arrayPosition.x][tempTile.arrayPosition.y] = tempTile;
+        }
+
+        creator.GridArray = TempGridRef;
+
+        Debug.Log("Refreshed Array");
+    }
+
+    void RenameChildren()
+    {
+        SquareGridCreator creator = (SquareGridCreator)target;
+        //Initalize Grid
+        BaseTile[][] TempGridRef = new BaseTile[creator.Width][];
+
+        for (int i = 0; i < TempGridRef.Length; i++)
+        {
+            TempGridRef[i] = new Tile[creator.Height];
+        }
+
+        for (int i = 0; i < TempGridRef.Length; i++)
+        {
+            for (int p = 0; p < TempGridRef[i].Length; p++)
+            {
+                int childNum = (i * creator.Height) + p;
+
+                Transform tileTrans = creator.transform.GetChild(childNum);
+                tileTrans.name = "GameSquare(" + i + "," + p + ")" + " num: " + childNum;
+            }
+        }
+
+        creator.GridArray = TempGridRef;
+
+        Debug.Log("Refreshed Array");
     }
 }
