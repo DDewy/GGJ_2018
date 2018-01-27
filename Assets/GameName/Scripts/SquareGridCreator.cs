@@ -34,9 +34,25 @@ public class SquareGridCreator : MonoBehaviour {
 
             for(int i = 0; i < transform.childCount; i++)
             {
-                BaseTile tempTile = transform.GetChild(i).GetComponent<BaseTile>();
+                GameObject childRef = transform.GetChild(i).gameObject;
+                BaseTile tempTile = childRef.GetComponent<BaseTile>();
 
-                GridArray[tempTile.arrayPosition.x][tempTile.arrayPosition.y] = tempTile;
+                if(tempTile != null)
+                {
+                    GridArray[tempTile.arrayPosition.x][tempTile.arrayPosition.y] = tempTile;
+                }
+                else
+                {
+                    Debug.LogError("NULL Grid found at child: " + i, childRef);
+
+                    #if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+                    #else
+                    //TODO, BACK TO MAIN MENU- Reload Scene
+                    Application.Quit();
+                    #endif
+                }
+                
             }
         }
     }
@@ -98,5 +114,31 @@ public class SquareGridCreator : MonoBehaviour {
         }
 
         return ReflectPositions.ToArray();
+    }
+
+    public void ClearGrid()
+    {
+        BaseTile[][] TempArray = GridArray;
+
+        if (TempArray == null)
+        {
+            while (transform.childCount > 0)
+            {
+                DestroyImmediate(transform.GetChild(0).gameObject);
+            }
+            return;
+        }
+
+
+        for (int i = 0; i < TempArray.Length; i++)
+        {
+            for (int p = 0; p < TempArray[i].Length; p++)
+            {
+                DestroyImmediate(TempArray[i][p].gameObject);
+                TempArray[i][p] = null;
+            }
+        }
+
+        GridArray = null;
     }
 }
