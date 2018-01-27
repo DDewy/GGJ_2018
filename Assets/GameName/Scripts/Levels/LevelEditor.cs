@@ -10,6 +10,9 @@ public class LevelEditor : MonoBehaviour {
     //NEED TO ADD/SET TARGET COLOUR
     //NEED TO ADD/SET OUTPUT COLOUR
 
+        //changing getLevel extensively. 
+            // square grid: 
+
     public int levelToLoad;
     public string filePath = "null";
 
@@ -29,45 +32,58 @@ public class LevelEditor : MonoBehaviour {
         string fullLevelString = levelSplit[(levelNum)].TrimStart('|');
         //Debug.Log(fullLevelString);
         levelSplit = fullLevelString.Split('|').ToList<string>();
+        
+        List<BaseTile> existingTiles = GameObject.Find("SquareGrid").transform.GetComponentsInChildren<BaseTile>().ToList();
+        List<Vector2Int> tileCoords = new List<Vector2Int>();
 
+        //get tile coordinates
+        for (int tileNum = 0; tileNum < existingTiles.Count; tileNum++)
+        {
+            Vector2Int V2Extract;
+            ExtractVector2Int(existingTiles[tileNum].name, out V2Extract);
+            tileCoords.Insert(tileNum, V2Extract);
+        }
+
+        //****clear level here somehow
+        Debug.Log("Remember to clear/create the grid before this");
+
+        //set our custom tiles
         for (int i = 0; i < levelSplit.Count; i++)
         {
             string tileInfo = levelSplit[i];
-            Debug.Log(tileInfo);
-            BaseTile[][] squareGrid = GameObject.Find("SquareGrid").GetComponent<SquareGridCreator>().GridArray;
-            Debug.Log("Attempting to find GridArray:")
-            Debug.Log(GameObject.Find("SquareGrid").GetComponent<SquareGridCreator>().GridArray.ToString());
+            //Debug.Log(tileInfo);                  
 
             //extract tile type
-            Debug.Log(tileInfo.Substring(0, tileInfo.IndexOf('(')));
+            Debug.Log("Tile Type is " + tileInfo.Substring(0, tileInfo.IndexOf('(')));
             BaseTile.TileTypes tileType = (BaseTile.TileTypes)System.Enum.Parse(typeof(BaseTile.TileTypes),tileInfo.Substring(0, tileInfo.IndexOf('(')));
 
             //extract tile coords
-            int x, y;
-            ExtractVector2Int(tileInfo, out x, out y);
+            Vector2Int V2Extract;
+            ExtractVector2Int(tileInfo, out V2Extract);
 
-            //set tile values
-            Debug.Log("Attempt to access array at " + x + ", " + y);
-            BaseTile target = squareGrid[x][y];
-            target.tileType = tileType;
+            //get current and set tile values
+            int findNum = tileCoords.IndexOf(V2Extract);
+            BaseTile target = existingTiles[findNum];
 
-            target.AssignNewTile(new Vector2Int(x,y));
+            target.ChangeTo(tileType);
+            Debug.Log("set to " + target.tileType.ToString());
+            target.AssignNewTile(V2Extract);
 
-            Debug.Log(tileInfo + " converted to " + x + ", " + y);
+            Debug.Log(tileInfo + " converted to " + V2Extract.ToString());
 
             //set satellite/output values
             if (tileInfo.Contains("+"))
             {
                 int extraVal = tileInfo.IndexOf('+');
-                ExtractVector2Int(tileInfo.Substring(extraVal), out x, out y);
-                Debug.Log("Extracting Vector from: " + tileInfo.Substring(extraVal) + "-- extracted: " + new Vector2Int(x,y));
+                ExtractVector2Int(tileInfo.Substring(extraVal), out V2Extract);
+                Debug.Log("Extracting Vector from: " + tileInfo.Substring(extraVal) + "-- extracted: " + V2Extract);
                 if (target.tileType == BaseTile.TileTypes.Satalite)
                 {
-                    (target as ReflectSatellite).ReflectDirection = new Vector2Int(x, y);
+                    (target as ReflectSatellite).ReflectDirection = V2Extract;
                 }
                 if (target.tileType == BaseTile.TileTypes.LightOutput)
                 {
-                    (target as LightOutput).LightDirection = new Vector2Int(x, y);
+                    (target as LightOutput).LightDirection = V2Extract;
                     //***extract and set colour
                 }
                 if (target.tileType == BaseTile.TileTypes.LightTarget)
@@ -78,16 +94,18 @@ public class LevelEditor : MonoBehaviour {
         }
     }
 
-    private void ExtractVector2Int(string inString, out int x, out int y)
+    private void ExtractVector2Int(string inString, out Vector2Int output)
     {
         int endOfX = inString.IndexOf(',');
         int endOfY = inString.IndexOf(')');
         int startOfX = inString.IndexOf('(') + 1;
-        int startOfY = endOfX + 2;
-        //Debug.Log("X is " + inString.Substring(startOfX, (endOfX - startOfX)));
-        //Debug.Log("Y is " + inString.Substring(startOfY, (endOfY - startOfY)));
-        x = int.Parse(inString.Substring(startOfX, (endOfX - startOfX)));
-        y = int.Parse(inString.Substring(startOfY, (endOfY - startOfY)));
+        int startOfY = endOfX + 1;
+        //Debug.Log(inString.Substring(startOfX, endOfY - startOfX));
+        //Debug.Log("X is " + inString.Substring(startOfX, (endOfX - startOfX)));        
+        //Debug.Log("Y is " + inString.Substring(startOfY, (endOfY - startOfY)));        
+        int x = int.Parse(inString.Substring(startOfX, (endOfX - startOfX)));
+        int y = int.Parse(inString.Substring(startOfY, (endOfY - startOfY)));
+        output = new Vector2Int(x, y);
     }
 
     public void storeLevel()
