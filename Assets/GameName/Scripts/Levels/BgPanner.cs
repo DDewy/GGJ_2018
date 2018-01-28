@@ -15,6 +15,7 @@ public class BgPanner : MonoBehaviour
 
     public void fasterPan()     //subscribe to end of level
     {
+        gameObject.GetComponentInChildren<AudioSource>().Play();
         StartCoroutine(QuickPan());
     }
 
