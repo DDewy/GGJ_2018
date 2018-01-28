@@ -146,4 +146,9 @@ public class SquareGridCreator : MonoBehaviour {
     {
         
     }
+
+    public void SetTile(Vector2Int ArrayPos, BaseTile newTile)
+    {
+        GridArray[ArrayPos.x] [ArrayPos.y] = newTile;
+    }
 }

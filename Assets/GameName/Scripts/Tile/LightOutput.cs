@@ -14,6 +14,18 @@ public class LightOutput : BaseTile
         yield return new WaitForSeconds(2.0f);
 
         LightPositions = SquareGridCreator.instance.LightBouncePositions(arrayPosition, LightDirection);
+
+        if(lineRenderer != null)
+        {
+            Vector3[] tempArray = new Vector3[LightPositions.Length];
+
+            for(int i = 0; i < tempArray.Length; i++)
+            {
+                tempArray[i] = (Vector2)LightPositions[i];
+            }
+
+            lineRenderer.SetPositions(tempArray);
+        }
     }
 
     private void Update()
@@ -24,9 +36,9 @@ public class LightOutput : BaseTile
         }
     }
 
-    public override void AssignNewTile(Vector2Int arrayPosition)
+    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
     {
-        base.AssignNewTile(arrayPosition);
+        base.AssignNewTile(arrayPosition, creator);
 
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
 
@@ -37,12 +49,23 @@ public class LightOutput : BaseTile
 
         tileType = TileTypes.LightOutput;
 
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        GameObject tempLine = Instantiate((GameObject)Resources.Load("Light"), transform);
 
+        lineRenderer = tempLine.GetComponent<LineRenderer>();
+    }
+    
+    public override void RemoveTile()
+    {
+        if(lineRenderer != null)
+        {
+            DestroyImmediate(lineRenderer.gameObject);
+            lineRenderer = null;
+        }
     }
 
-    protected virtual void SetUpLineRenderer(LineRenderer renderer)
+    private void OnDrawGizmos()
     {
-        renderer.widthMultiplier = 0.3f;
+        Vector3 tempVec = ((Vector2)LightDirection);
+        Gizmos.DrawLine(transform.position, transform.position + tempVec);
     }
 }

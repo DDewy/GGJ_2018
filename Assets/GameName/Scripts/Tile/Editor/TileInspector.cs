@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(Tile))]
-public class TileInspector : Editor {
+public class TileInspector : Editor
+{
 
     public override void OnInspectorGUI()
     {
@@ -14,7 +15,7 @@ public class TileInspector : Editor {
 
         EditorGUILayout.BeginHorizontal();
 
-        if(GUILayout.Button("Tile"))
+        if (GUILayout.Button("Tile"))
         {
             ChangeTo(Tile.TileTypes.Tile);
         }
@@ -22,6 +23,11 @@ public class TileInspector : Editor {
         if (GUILayout.Button("Satalite"))
         {
             ChangeTo(Tile.TileTypes.Satalite);
+        }
+
+        if(GUILayout.Button("RotSatellite"))
+        {
+            ChangeTo(Tile.TileTypes.RotateSatellite);
         }
 
         if (GUILayout.Button("Light Output"))
@@ -34,7 +40,7 @@ public class TileInspector : Editor {
             ChangeTo(Tile.TileTypes.LightTarget);
         }
 
-        if(GUILayout.Button("Asteroid"))
+        if (GUILayout.Button("Asteroid"))
         {
             ChangeTo(Tile.TileTypes.Asteroid);
         }
@@ -44,43 +50,45 @@ public class TileInspector : Editor {
 
     void ChangeTo(Tile.TileTypes newType)
     {
-        BaseTile oldTile = (BaseTile)target;
+        BaseTile.ChangeTo(newType, (BaseTile)target);
+        //    BaseTile oldTile = (BaseTile)target;
 
-        BaseTile newTile = null;
+        //    BaseTile newTile = null;
 
-        switch(newType)
-        {
-            case Tile.TileTypes.Tile:
-                newTile = oldTile.gameObject.AddComponent<Tile>();
-                break;
+        //    switch(newType)
+        //    {
+        //        case Tile.TileTypes.Tile:
+        //            newTile = oldTile.gameObject.AddComponent<Tile>();
+        //            break;
 
-            case Tile.TileTypes.Satalite:
-                newTile = oldTile.gameObject.AddComponent<ReflectSatellite>();
-                break;
+        //        case Tile.TileTypes.Satalite:
+        //            newTile = oldTile.gameObject.AddComponent<ReflectSatellite>();
+        //            break;
 
-            case Tile.TileTypes.LightOutput:
-                newTile = oldTile.gameObject.AddComponent<LightOutput>();
-                break;
+        //        case Tile.TileTypes.LightOutput:
+        //            newTile = oldTile.gameObject.AddComponent<LightOutput>();
+        //            break;
 
-            case Tile.TileTypes.LightTarget:
-                newTile = oldTile.gameObject.AddComponent<TargetTile>();
-                break;
+        //        case Tile.TileTypes.LightTarget:
+        //            newTile = oldTile.gameObject.AddComponent<TargetTile>();
+        //            break;
 
-            case Tile.TileTypes.Asteroid:
-                newTile = oldTile.gameObject.AddComponent<AsteroidTile>();
-                break;
-        }
+        //        case Tile.TileTypes.Asteroid:
+        //            newTile = oldTile.gameObject.AddComponent<AsteroidTile>();
+        //            break;
+        //    }
 
-        if(newTile == null)
-        {
-            //report an Error and Back out
-            Debug.LogError("Could not Change Tile target");
-            return;
-        }
+        //    if(newTile == null)
+        //    {
+        //        //report an Error and Back out
+        //        Debug.LogError("Could not Change Tile target");
+        //        return;
+        //    }
+        //    oldTile.RemoveTile();
+        //    newTile.AssignNewTile(oldTile.arrayPosition);
 
-        newTile.AssignNewTile(oldTile.arrayPosition);
-
-        DestroyImmediate(oldTile);
+        //    DestroyImmediate(oldTile);
+        //}
     }
 }
 

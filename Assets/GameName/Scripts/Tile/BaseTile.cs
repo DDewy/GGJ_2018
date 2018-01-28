@@ -4,12 +4,16 @@ using UnityEngine;
 
 public abstract class BaseTile : MonoBehaviour
 {
+    public SquareGridCreator creator;
     public Vector2Int arrayPosition;
     public TileTypes tileType = TileTypes.NULL;
 
-    public virtual void AssignNewTile(Vector2Int arrayPosition)
+    public virtual void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
     {
         this.arrayPosition = arrayPosition;
+        this.creator = creator;
+
+        creator.SetTile(arrayPosition, this);
     }
 
     public virtual void RemoveTile()
@@ -17,29 +21,39 @@ public abstract class BaseTile : MonoBehaviour
 
     }
 
-    public static void ChangeTo(Tile.TileTypes newType, BaseTile originalTile)
+    /// <summary>
+    /// Function that can change the type of the tile and replace its self in the grid array
+    /// </summary>
+    /// <param name="newType">New Type to switch to</param>
+    /// <param name="originalTile">The Tile to switch from</param>
+    /// <returns>Reference to the new Tile</returns>
+    public static BaseTile ChangeTo(Tile.TileTypes newType, BaseTile originalTile)
     {
         BaseTile newTile = null;
 
         switch (newType)
         {
-            case Tile.TileTypes.Tile:
+            case TileTypes.Tile:
                 newTile = originalTile.gameObject.AddComponent<Tile>();
                 break;
 
-            case Tile.TileTypes.Satalite:
+            case TileTypes.Satalite:
                 newTile = originalTile.gameObject.AddComponent<ReflectSatellite>();
                 break;
 
-            case Tile.TileTypes.LightOutput:
+            case TileTypes.RotateSatellite:
+                newTile = originalTile.gameObject.AddComponent<RotateableSatellite>();
+                break;
+
+            case TileTypes.LightOutput:
                 newTile = originalTile.gameObject.AddComponent<LightOutput>();
                 break;
 
-            case Tile.TileTypes.LightTarget:
+            case TileTypes.LightTarget:
                 newTile = originalTile.gameObject.AddComponent<TargetTile>();
                 break;
 
-            case Tile.TileTypes.Asteroid:
+            case TileTypes.Asteroid:
                 newTile = originalTile.gameObject.AddComponent<AsteroidTile>();
                 break;
         }
@@ -48,12 +62,13 @@ public abstract class BaseTile : MonoBehaviour
         {
             //report an Error and Back out
             Debug.LogError("Could not Change Tile target");
-            return;
+            return null;
         }
         originalTile.RemoveTile();
-        newTile.AssignNewTile(originalTile.arrayPosition);
+        newTile.AssignNewTile(originalTile.arrayPosition, originalTile.creator);
 
         DestroyImmediate(originalTile);
+        return newTile;
     }
 
     public enum TileTypes
@@ -63,6 +78,7 @@ public abstract class BaseTile : MonoBehaviour
         Satalite,
         LightOutput,
         LightTarget,
-        Asteroid
+        Asteroid,
+        RotateSatellite
     }
 }

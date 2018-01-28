@@ -16,9 +16,9 @@ public class ReflectSatellite : BaseTile
     }
 
 
-    public override void AssignNewTile(Vector2Int arrayPosition)
+    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
     {
-        base.AssignNewTile(arrayPosition);
+        base.AssignNewTile(arrayPosition, creator);
 
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
 
@@ -32,7 +32,10 @@ public class ReflectSatellite : BaseTile
 
     private void OnDrawGizmos()
     {
-        Vector3 tempVec = ((Vector2)ReflectDirection);
-        Gizmos.DrawLine(transform.position, transform.position + tempVec);
+        if(!Application.isPlaying)
+        {
+            Vector3 tempVec = ((Vector2)ReflectDirection);
+            Gizmos.DrawLine(transform.position, transform.position + tempVec);
+        }
     }
 }

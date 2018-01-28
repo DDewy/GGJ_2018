@@ -11,9 +11,9 @@ public class Tile : BaseTile
         
     }
 
-    public override void AssignNewTile(Vector2Int arrayPosition)
+    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
     {
-        base.AssignNewTile(arrayPosition);
+        base.AssignNewTile(arrayPosition, creator);
 
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
 

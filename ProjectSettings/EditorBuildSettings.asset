@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/GameName/Scenes/UI_Scene.unity
+    guid: 24280888dfb1b8d458f3bac443bb3107
+  - enabled: 1
+    path: Assets/GameName/Scenes/SquareGrid.unity
+    guid: d13d2a0939cfdda4e884913ce6f6fe2d

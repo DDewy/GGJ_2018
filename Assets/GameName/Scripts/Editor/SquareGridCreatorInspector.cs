@@ -39,32 +39,29 @@ public class SquareGridCreatorInspector : Editor
     {
         SquareGridCreator creator = (SquareGridCreator)target;
         //Initalize Grid
-        GameObject[][] TempGridObject = new GameObject[creator.Width][];
         BaseTile[][] TempGridRef = new BaseTile[creator.Width][];
 
-        for(int i = 0; i < TempGridObject.Length; i++)
+        for(int i = 0; i < TempGridRef.Length; i++)
         {
-            TempGridObject[i] = new GameObject[creator.Height];
-            TempGridRef[i] = new Tile[creator.Height];
+            TempGridRef[i] = new BaseTile[creator.Height];
         }
+
+        //Setup the Grid Size
+        creator.GridArray = TempGridRef;
 
         //const int SquareSpacing = 1;
         int xOffset = creator.Width / 2, yOffset = creator.Height / 2;
         creator.WorldOffset = new Vector2Int(-xOffset, -yOffset);
 
-        for (int i = 0; i < TempGridObject.Length; i++)
+        for (int i = 0; i < TempGridRef.Length; i++)
         {
-            for(int p = 0; p < TempGridObject[i].Length; p++)
+            for(int p = 0; p < TempGridRef[i].Length; p++)
             {
-                TempGridObject[i][p] = Instantiate(creator.SquareRef, creator.transform);
-                TempGridObject[i][p].transform.localPosition = new Vector3Int(i - xOffset, p - yOffset, 0);
-                TempGridRef[i][p] = TempGridObject[i][p].GetComponent<BaseTile>();
-                TempGridRef[i][p].AssignNewTile(new Vector2Int(i, p));
+                GameObject TempTile = Instantiate(creator.SquareRef, creator.transform);
+                TempTile.transform.localPosition = new Vector3Int(i - xOffset, p - yOffset, 0);
+                TempTile.GetComponent<BaseTile>().AssignNewTile(new Vector2Int(i, p), creator);
             }
         }
-
-        creator.GridArray = TempGridRef;
-
         Debug.Log("Reached the end of the Creation Array");
     }
 
@@ -83,7 +80,7 @@ public class SquareGridCreatorInspector : Editor
 
         for (int i = 0; i < TempGridRef.Length; i++)
         {
-            TempGridRef[i] = new Tile[creator.Height];
+            TempGridRef[i] = new BaseTile[creator.Height];
         }
 
         for (int i = 0; i < creator.transform.childCount; i++)
@@ -93,7 +90,8 @@ public class SquareGridCreatorInspector : Editor
 
             Debug.Log("FoundTile Position: " + tempTile.arrayPosition, tempTile.gameObject);
 
-            TempGridRef[tempTile.arrayPosition.x][tempTile.arrayPosition.y] = tempTile as BaseTile;
+            TempGridRef[tempTile.arrayPosition.x][tempTile.arrayPosition.y] = tempTile;
+            tempTile.creator = creator;
         }
 
         creator.GridArray = TempGridRef;
@@ -109,7 +107,7 @@ public class SquareGridCreatorInspector : Editor
 
         for (int i = 0; i < TempGridRef.Length; i++)
         {
-            TempGridRef[i] = new Tile[creator.Height];
+            TempGridRef[i] = new BaseTile[creator.Height];
         }
 
         for (int i = 0; i < TempGridRef.Length; i++)
