@@ -11,6 +11,20 @@ public class SquareGridCreator : MonoBehaviour {
     public GameObject SquareRef;
     public BaseTile[][] GridArray;
 
+    #region DelegateStuff
+    
+    public event System.Action PathUpdated;
+
+    public void OnPathUpdated()
+    {
+        if (PathUpdated != null)
+        {
+            PathUpdated();
+        }
+    }
+
+    #endregion
+
     private void Start()
     {
         if (instance == null || instance == this)
@@ -75,11 +89,22 @@ public class SquareGridCreator : MonoBehaviour {
             
             //Check if this Position is a Satalite
             
-            if(NextPostion.tileType == BaseTile.TileTypes.Satalite)
+            if(NextPostion.tileType == BaseTile.TileTypes.Satalite || NextPostion.tileType == BaseTile.TileTypes.RotateSatellite)
             {
                 //This is a satalite, this will update our heading
                 LastKnownHeading = NextPostion.GetComponent<ReflectSatellite>().ReflectDirection;
-                ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
+
+                if(ReflectPositions.Contains(NextPostion.arrayPosition + WorldOffset))
+                {
+                    //Stop this here, since we are going to end up going in a loop
+                    ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
+                    NextPostion = null;
+                    break;
+                }
+                else
+                {
+                    ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
+                }
             }
             else if(NextPostion.tileType == BaseTile.TileTypes.LightTarget)
             {
