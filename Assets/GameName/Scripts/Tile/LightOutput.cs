@@ -56,6 +56,9 @@ public class LightOutput : BaseTile
         GameObject tempLine = Instantiate(referenceObj, transform);
         LineRenderer tempRender = referenceObj.GetComponent<LineRenderer>();
 
+        GameObject refPrefab = (GameObject)Resources.Load("OutputPrefab");
+        Instantiate(refPrefab, transform);
+
         lineRenderer = tempLine.GetComponent<LineRenderer>();
     }
     

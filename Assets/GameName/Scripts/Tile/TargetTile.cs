@@ -29,5 +29,8 @@ public class TargetTile : BaseTile
         }
 
         tileType = TileTypes.LightTarget;
+
+        GameObject refPrefab = (GameObject)Resources.Load("TargetPrefab");
+        Instantiate(refPrefab, transform);
     }
 }
