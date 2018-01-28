@@ -10,7 +10,7 @@ public class BgPanner : MonoBehaviour
     public void Start()
     {
         render = gameObject.GetComponent<Renderer>();
-        StartCoroutine(Pan());
+        StartCoroutine(Pan());        
     }
 
     public void fasterPan()     //subscribe to end of level
