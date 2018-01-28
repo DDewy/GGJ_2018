@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 0}
   tileType: 1
 --- !u!212 &1222620
@@ -241,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 12}
   tileType: 1
 --- !u!212 &11118803
@@ -328,6 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 12}
   tileType: 1
 --- !u!212 &15740221
@@ -415,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 12}
   tileType: 1
 --- !u!212 &18520682
@@ -502,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 16}
   tileType: 1
 --- !u!212 &34398751
@@ -589,6 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 13}
   tileType: 1
 --- !u!212 &36701439
@@ -676,6 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 15}
   tileType: 1
 --- !u!212 &53011641
@@ -763,6 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 10}
   tileType: 1
 --- !u!212 &56213468
@@ -850,6 +858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 9}
   tileType: 1
 --- !u!212 &60538248
@@ -937,6 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 14}
   tileType: 1
 --- !u!212 &65233059
@@ -1024,6 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 8}
   tileType: 1
 --- !u!212 &71149846
@@ -1111,6 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 2}
   tileType: 1
 --- !u!212 &71843056
@@ -1198,6 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 1}
   tileType: 1
 --- !u!212 &110411059
@@ -1285,6 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 14}
   tileType: 1
 --- !u!212 &114648637
@@ -1331,6 +1345,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!115 &123529051
+MonoScript:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 4
+  m_Script: 
+  m_DefaultReferences: {}
+  m_Icon: {fileID: 0}
+  m_ExecutionOrder: 0
+  m_ClassName: ReflectSatellite
+  m_Namespace: 
+  m_AssemblyName: Assembly-CSharp
+  m_IsEditorScript: 0
 --- !u!1 &126076233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 12}
   tileType: 1
 --- !u!212 &126076236
@@ -1459,6 +1489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 4}
   tileType: 1
 --- !u!212 &129813899
@@ -1546,6 +1577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 11}
   tileType: 1
 --- !u!212 &137111899
@@ -1633,6 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 2}
   tileType: 1
 --- !u!212 &143227951
@@ -1720,6 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 5}
   tileType: 1
 --- !u!212 &150661095
@@ -1872,6 +1906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 1}
   tileType: 1
 --- !u!212 &184693328
@@ -1959,6 +1994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 6}
   tileType: 1
 --- !u!212 &195425557
@@ -2046,6 +2082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 15}
   tileType: 1
 --- !u!212 &201003929
@@ -2133,6 +2170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 3}
   tileType: 1
 --- !u!212 &203744932
@@ -2220,6 +2258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 9}
   tileType: 1
 --- !u!212 &222644549
@@ -2307,6 +2346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 4}
   tileType: 1
 --- !u!212 &255143794
@@ -2394,6 +2434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 13}
   tileType: 1
 --- !u!212 &269564026
@@ -2481,6 +2522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 7}
   tileType: 1
 --- !u!212 &273902052
@@ -2568,6 +2610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 10}
   tileType: 1
 --- !u!212 &286958382
@@ -2655,6 +2698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 13}
   tileType: 1
 --- !u!212 &322604303
@@ -2742,6 +2786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 5}
   tileType: 1
 --- !u!212 &332124838
@@ -2829,6 +2874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 10}
   tileType: 1
 --- !u!212 &343165450
@@ -2916,6 +2962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 13}
   tileType: 1
 --- !u!212 &345749204
@@ -3003,6 +3050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 12}
   tileType: 1
 --- !u!212 &345769515
@@ -3090,6 +3138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 2}
   tileType: 1
 --- !u!212 &351641355
@@ -3177,6 +3226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 16}
   tileType: 1
 --- !u!212 &375156105
@@ -3264,6 +3314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 0}
   tileType: 1
 --- !u!212 &384767802
@@ -3351,6 +3402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 3}
   tileType: 1
 --- !u!212 &399807287
@@ -3438,6 +3490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 7}
   tileType: 1
 --- !u!212 &403213976
@@ -3525,6 +3578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 8}
   tileType: 1
 --- !u!212 &439064885
@@ -3612,6 +3666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 13}
   tileType: 1
 --- !u!212 &445623064
@@ -3699,6 +3754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 8}
   tileType: 1
 --- !u!212 &465871972
@@ -3786,6 +3842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 13}
   tileType: 1
 --- !u!212 &467679770
@@ -3832,6 +3889,123 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &467984785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 467984786}
+  - component: {fileID: 467984787}
+  m_Layer: 0
+  m_Name: Light(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &467984786
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467984785}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1371031325}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &467984787
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467984785}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2a0f74b839b8c2d4fb213f632c60e508, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  m_Parameters:
+    serializedVersion: 2
+    widthMultiplier: 0.3
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 1}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65150
+      atime2: 65535
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
 --- !u!1 &481612971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3873,6 +4047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 6}
   tileType: 1
 --- !u!212 &481612974
@@ -3960,6 +4135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 5}
   tileType: 1
 --- !u!212 &482143799
@@ -4047,6 +4223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 16}
   tileType: 1
 --- !u!212 &484854573
@@ -4134,6 +4311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 1}
   tileType: 1
 --- !u!212 &496934366
@@ -4221,6 +4399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 1}
   tileType: 1
 --- !u!212 &521034118
@@ -4308,6 +4487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 6}
   tileType: 1
 --- !u!212 &531750777
@@ -4395,6 +4575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 6}
   tileType: 1
 --- !u!212 &533056524
@@ -4482,6 +4663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 15}
   tileType: 1
 --- !u!212 &540882093
@@ -4569,6 +4751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 3}
   tileType: 1
 --- !u!212 &542324899
@@ -4656,6 +4839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 0}
   tileType: 1
 --- !u!212 &545039581
@@ -4743,6 +4927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 9}
   tileType: 1
 --- !u!212 &554679193
@@ -4830,6 +5015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 12}
   tileType: 1
 --- !u!212 &595941558
@@ -4917,6 +5103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 6}
   tileType: 1
 --- !u!212 &612042052
@@ -5004,6 +5191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 3}
   tileType: 1
 --- !u!212 &613468236
@@ -5091,6 +5279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 2}
   tileType: 1
 --- !u!212 &641773638
@@ -5178,6 +5367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 0}
   tileType: 1
 --- !u!212 &641794965
@@ -5265,6 +5455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 14}
   tileType: 1
 --- !u!212 &653580826
@@ -5352,6 +5543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 7}
   tileType: 1
 --- !u!212 &654851891
@@ -5439,6 +5631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 14}
   tileType: 1
 --- !u!212 &659139780
@@ -5526,6 +5719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 8}
   tileType: 1
 --- !u!212 &695545004
@@ -5613,6 +5807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 14}
   tileType: 1
 --- !u!212 &742641528
@@ -5700,6 +5895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 4}
   tileType: 1
 --- !u!212 &767569866
@@ -5787,6 +5983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 5}
   tileType: 1
 --- !u!212 &768626355
@@ -5874,6 +6071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 4}
   tileType: 1
 --- !u!212 &776955455
@@ -5961,6 +6159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 11}
   tileType: 1
 --- !u!212 &781252746
@@ -6048,6 +6247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 3}
   tileType: 1
 --- !u!212 &786302967
@@ -6135,6 +6335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 16}
   tileType: 1
 --- !u!212 &792767349
@@ -6222,6 +6423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 0}
   tileType: 1
 --- !u!212 &815925709
@@ -6309,6 +6511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 14}
   tileType: 1
 --- !u!212 &824862104
@@ -6396,6 +6599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 10}
   tileType: 1
 --- !u!212 &827929142
@@ -6483,6 +6687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 8}
   tileType: 1
 --- !u!212 &829754623
@@ -6570,6 +6775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 5}
   tileType: 1
 --- !u!212 &837575330
@@ -6657,6 +6863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 5}
   tileType: 1
 --- !u!212 &847326367
@@ -6744,6 +6951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 11}
   tileType: 1
 --- !u!212 &856000437
@@ -6831,6 +7039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 11}
   tileType: 1
 --- !u!212 &861573906
@@ -6918,6 +7127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 14}
   tileType: 1
 --- !u!212 &863383284
@@ -7005,6 +7215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 6}
   tileType: 1
 --- !u!212 &864456322
@@ -7092,6 +7303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 6}
   tileType: 1
 --- !u!212 &887325223
@@ -7179,6 +7391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 12}
   tileType: 1
 --- !u!212 &912897853
@@ -7266,6 +7479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 5}
   tileType: 1
 --- !u!212 &914014583
@@ -7353,6 +7567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 8}
   tileType: 1
 --- !u!212 &937257389
@@ -7521,6 +7736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 10}
   tileType: 1
 --- !u!212 &952430204
@@ -7608,6 +7824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 13}
   tileType: 1
 --- !u!212 &973976923
@@ -7695,6 +7912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 4}
   tileType: 1
 --- !u!212 &974006025
@@ -7782,6 +8000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 12}
   tileType: 1
 --- !u!212 &983566911
@@ -7869,6 +8088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 8}
   tileType: 1
 --- !u!212 &997085915
@@ -7924,6 +8144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 998949724}
   - component: {fileID: 998949726}
+  - component: {fileID: 998949727}
   - component: {fileID: 998949725}
   m_Layer: 0
   m_Name: 'GameSquare(1,11) num: 28'
@@ -7945,19 +8166,18 @@ Transform:
   m_Father: {fileID: 2131900908}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &998949725
-MonoBehaviour:
+--- !u!65 &998949725
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998949723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrayPosition: {x: 1, y: 11}
-  tileType: 1
+  serializedVersion: 2
+  m_Size: {x: 0.95, y: 0.95, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &998949726
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7993,7 +8213,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1bce4a560e549fc4a98bdb22fe9007c3, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8002,6 +8222,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &998949727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998949723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6477b5d4a42db4884425db2a7c783b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
+  arrayPosition: {x: 1, y: 11}
+  tileType: 6
+  ReflectDirection: {x: -1, y: 0}
 --- !u!1 &1020370843
 GameObject:
   m_ObjectHideFlags: 0
@@ -8043,6 +8278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 3}
   tileType: 1
 --- !u!212 &1020370846
@@ -8130,6 +8366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 13}
   tileType: 1
 --- !u!212 &1031881265
@@ -8217,6 +8454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 3}
   tileType: 1
 --- !u!212 &1076112356
@@ -8304,6 +8542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 4}
   tileType: 1
 --- !u!212 &1081099315
@@ -8391,6 +8630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 1}
   tileType: 1
 --- !u!212 &1081373567
@@ -8478,6 +8718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 5}
   tileType: 1
 --- !u!212 &1092107923
@@ -8565,6 +8806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 9}
   tileType: 1
 --- !u!212 &1124375207
@@ -8652,6 +8894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 15}
   tileType: 1
 --- !u!212 &1142781719
@@ -8739,6 +8982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 13}
   tileType: 1
 --- !u!212 &1149524061
@@ -8826,6 +9070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 1}
   tileType: 1
 --- !u!212 &1167784279
@@ -8913,6 +9158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 0}
   tileType: 1
 --- !u!212 &1180643649
@@ -9000,6 +9246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 13}
   tileType: 1
 --- !u!212 &1190940277
@@ -9087,6 +9334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 5}
   tileType: 1
 --- !u!212 &1196636919
@@ -9174,6 +9422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 7}
   tileType: 1
 --- !u!212 &1205498819
@@ -9261,6 +9510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 1}
   tileType: 1
 --- !u!212 &1217911650
@@ -9348,6 +9598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 0}
   tileType: 1
 --- !u!212 &1219254673
@@ -9435,6 +9686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 15}
   tileType: 1
 --- !u!212 &1248208466
@@ -9490,6 +9742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265921909}
   - component: {fileID: 1265921911}
+  - component: {fileID: 1265921912}
   - component: {fileID: 1265921910}
   m_Layer: 0
   m_Name: 'GameSquare(1,10) num: 27'
@@ -9511,19 +9764,18 @@ Transform:
   m_Father: {fileID: 2131900908}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1265921910
-MonoBehaviour:
+--- !u!65 &1265921910
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1265921908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrayPosition: {x: 1, y: 10}
-  tileType: 1
+  serializedVersion: 2
+  m_Size: {x: 0.95, y: 0.95, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1265921911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9559,7 +9811,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1bce4a560e549fc4a98bdb22fe9007c3, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9568,6 +9820,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1265921912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265921908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6477b5d4a42db4884425db2a7c783b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
+  arrayPosition: {x: 1, y: 10}
+  tileType: 6
+  ReflectDirection: {x: 0, y: -1}
 --- !u!1 &1271652899
 GameObject:
   m_ObjectHideFlags: 0
@@ -9609,6 +9876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 9}
   tileType: 1
 --- !u!212 &1271652902
@@ -9696,6 +9964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 3}
   tileType: 1
 --- !u!212 &1271911713
@@ -9783,6 +10052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 3}
   tileType: 1
 --- !u!212 &1272411379
@@ -9870,6 +10140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 1}
   tileType: 1
 --- !u!212 &1273995192
@@ -9957,6 +10228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 7}
   tileType: 1
 --- !u!212 &1293469072
@@ -10044,6 +10316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 11}
   tileType: 1
 --- !u!212 &1347767644
@@ -10131,6 +10404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 1}
   tileType: 1
 --- !u!212 &1360219888
@@ -10218,6 +10492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 14}
   tileType: 1
 --- !u!212 &1362952654
@@ -10290,7 +10565,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 467984786}
   m_Father: {fileID: 2131900908}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10302,11 +10578,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1371031324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e6051b8e26986142ac6a292e454992c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 16}
-  tileType: 1
+  tileType: 3
+  LightPositions: []
+  LightDirection: {x: 1, y: 0}
+  OutputColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &1371031327
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10342,7 +10622,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1bce4a560e549fc4a98bdb22fe9007c3, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10392,6 +10672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 10}
   tileType: 1
 --- !u!212 &1373719181
@@ -10479,6 +10760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 2}
   tileType: 1
 --- !u!212 &1375667967
@@ -10566,6 +10848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 9}
   tileType: 1
 --- !u!212 &1381929410
@@ -10653,6 +10936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 11}
   tileType: 1
 --- !u!212 &1383066150
@@ -10740,6 +11024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 2}
   tileType: 1
 --- !u!212 &1413404085
@@ -10827,6 +11112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 2}
   tileType: 1
 --- !u!212 &1440233115
@@ -10914,6 +11200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 9}
   tileType: 1
 --- !u!212 &1451324545
@@ -11001,6 +11288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 6}
   tileType: 1
 --- !u!212 &1457605949
@@ -11088,6 +11376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 0}
   tileType: 1
 --- !u!212 &1469672433
@@ -11175,6 +11464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 15}
   tileType: 1
 --- !u!212 &1488149280
@@ -11262,6 +11552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 9}
   tileType: 1
 --- !u!212 &1491037451
@@ -11349,6 +11640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 8}
   tileType: 1
 --- !u!212 &1492998013
@@ -11436,6 +11728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 9}
   tileType: 1
 --- !u!212 &1493086954
@@ -11523,6 +11816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 8}
   tileType: 1
 --- !u!212 &1499909442
@@ -11610,6 +11904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 10}
   tileType: 1
 --- !u!212 &1514837340
@@ -11697,6 +11992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 15}
   tileType: 1
 --- !u!212 &1517857353
@@ -11784,6 +12080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 16}
   tileType: 1
 --- !u!212 &1521105208
@@ -11871,6 +12168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 7}
   tileType: 1
 --- !u!212 &1526869948
@@ -11958,6 +12256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 7}
   tileType: 1
 --- !u!212 &1548446804
@@ -12045,6 +12344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 1}
   tileType: 1
 --- !u!212 &1561588529
@@ -12132,6 +12432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 4}
   tileType: 1
 --- !u!212 &1566642377
@@ -12219,6 +12520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 0}
   tileType: 1
 --- !u!212 &1570627481
@@ -12303,11 +12605,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1580065160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
+  m_Script: {fileID: 123529051}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 16}
-  tileType: 1
+  tileType: 2
+  ReflectDirection: {x: 0, y: -1}
 --- !u!212 &1580065163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12343,7 +12647,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1bce4a560e549fc4a98bdb22fe9007c3, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12393,6 +12697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 8}
   tileType: 1
 --- !u!212 &1585779652
@@ -12480,6 +12785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 0}
   tileType: 1
 --- !u!212 &1588190106
@@ -12567,6 +12873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 8}
   tileType: 1
 --- !u!212 &1607003872
@@ -12654,6 +12961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 14}
   tileType: 1
 --- !u!212 &1613006911
@@ -12741,6 +13049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 4}
   tileType: 1
 --- !u!212 &1618069801
@@ -12828,6 +13137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 2}
   tileType: 1
 --- !u!212 &1619369385
@@ -12915,6 +13225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 15}
   tileType: 1
 --- !u!212 &1642838996
@@ -13002,6 +13313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 2}
   tileType: 1
 --- !u!212 &1681446529
@@ -13089,6 +13401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 6}
   tileType: 1
 --- !u!212 &1690811468
@@ -13176,6 +13489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 1}
   tileType: 1
 --- !u!212 &1691958388
@@ -13263,6 +13577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 9}
   tileType: 1
 --- !u!212 &1693023143
@@ -13350,6 +13665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 11}
   tileType: 1
 --- !u!212 &1700619717
@@ -13437,6 +13753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 4}
   tileType: 1
 --- !u!212 &1705431043
@@ -13524,6 +13841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 10}
   tileType: 1
 --- !u!212 &1710833439
@@ -13611,6 +13929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 15}
   tileType: 1
 --- !u!212 &1721247901
@@ -13698,6 +14017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 11}
   tileType: 1
 --- !u!212 &1749075782
@@ -13785,6 +14105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 16}
   tileType: 1
 --- !u!212 &1750046241
@@ -13872,6 +14193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 7}
   tileType: 1
 --- !u!212 &1781079051
@@ -13959,6 +14281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 11}
   tileType: 1
 --- !u!212 &1783930896
@@ -14014,6 +14337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801816829}
   - component: {fileID: 1801816831}
+  - component: {fileID: 1801816832}
   - component: {fileID: 1801816830}
   m_Layer: 0
   m_Name: 'GameSquare(6,10) num: 112'
@@ -14035,19 +14359,18 @@ Transform:
   m_Father: {fileID: 2131900908}
   m_RootOrder: 112
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1801816830
-MonoBehaviour:
+--- !u!65 &1801816830
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1801816828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrayPosition: {x: 6, y: 10}
-  tileType: 1
+  serializedVersion: 2
+  m_Size: {x: 0.95, y: 0.95, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1801816831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14083,7 +14406,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1bce4a560e549fc4a98bdb22fe9007c3, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14092,6 +14415,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1801816832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1801816828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6477b5d4a42db4884425db2a7c783b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
+  arrayPosition: {x: 6, y: 10}
+  tileType: 6
+  ReflectDirection: {x: 1, y: 0}
 --- !u!1 &1803842675
 GameObject:
   m_ObjectHideFlags: 0
@@ -14133,6 +14471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 13}
   tileType: 1
 --- !u!212 &1803842678
@@ -14220,6 +14559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 0}
   tileType: 1
 --- !u!212 &1818677925
@@ -14307,6 +14647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 15}
   tileType: 1
 --- !u!212 &1827392173
@@ -14394,6 +14735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 16}
   tileType: 1
 --- !u!212 &1831781410
@@ -14481,6 +14823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 6}
   tileType: 1
 --- !u!212 &1835251633
@@ -14568,6 +14911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 5}
   tileType: 1
 --- !u!212 &1853435640
@@ -14614,6 +14958,47 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1856018612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1856018614}
+  - component: {fileID: 1856018613}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1856018613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856018612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5738f2364565d5d44835ef3cafb61c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 941548599}
+--- !u!4 &1856018614
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856018612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1878922749
 GameObject:
   m_ObjectHideFlags: 0
@@ -14655,6 +15040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 10, y: 2}
   tileType: 1
 --- !u!212 &1878922752
@@ -14742,6 +15128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 12}
   tileType: 1
 --- !u!212 &1907114284
@@ -14829,6 +15216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 10}
   tileType: 1
 --- !u!212 &1923754890
@@ -14916,6 +15304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 7}
   tileType: 1
 --- !u!212 &1925916843
@@ -15003,6 +15392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 7}
   tileType: 1
 --- !u!212 &1939264707
@@ -15090,6 +15480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 6, y: 12}
   tileType: 1
 --- !u!212 &1964298470
@@ -15177,6 +15568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 16}
   tileType: 1
 --- !u!212 &1972580112
@@ -15264,6 +15656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 4}
   tileType: 1
 --- !u!212 &1985973220
@@ -15351,6 +15744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 9}
   tileType: 1
 --- !u!212 &1993116668
@@ -15438,6 +15832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 7}
   tileType: 1
 --- !u!212 &2010517818
@@ -15525,6 +15920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 2, y: 12}
   tileType: 1
 --- !u!212 &2012572004
@@ -15612,6 +16008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 15}
   tileType: 1
 --- !u!212 &2019128116
@@ -15699,6 +16096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 3}
   tileType: 1
 --- !u!212 &2019917744
@@ -15786,6 +16184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 3, y: 5}
   tileType: 1
 --- !u!212 &2038052892
@@ -15873,6 +16272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 2}
   tileType: 1
 --- !u!212 &2050647069
@@ -15960,6 +16360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 7, y: 16}
   tileType: 1
 --- !u!212 &2068987551
@@ -16047,6 +16448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 9, y: 6}
   tileType: 1
 --- !u!212 &2072681054
@@ -16134,6 +16536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 8, y: 11}
   tileType: 1
 --- !u!212 &2078226232
@@ -16221,6 +16624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 1, y: 14}
   tileType: 1
 --- !u!212 &2078375422
@@ -16308,6 +16712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 4, y: 3}
   tileType: 1
 --- !u!212 &2110322861
@@ -16395,6 +16800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 5, y: 14}
   tileType: 1
 --- !u!212 &2125057597
@@ -16727,6 +17133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d98484ed2394ea409cd6b7cf1310ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creator: {fileID: 2131900907}
   arrayPosition: {x: 0, y: 4}
   tileType: 1
 --- !u!212 &2135666164

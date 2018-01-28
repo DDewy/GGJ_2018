@@ -12,30 +12,9 @@ public class LightOutput : BaseTile
 
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(2.0f);
-
-        LightPositions = SquareGridCreator.instance.LightBouncePositions(arrayPosition, LightDirection);
-
-        if(lineRenderer == null)
-        {
-            lineRenderer = transform.GetChild(0).GetComponent<LineRenderer>();
-        }
-
-        if(lineRenderer != null)
-        {
-            Vector3[] tempArray = new Vector3[LightPositions.Length];
-            lineRenderer.positionCount = tempArray.Length;
-
-
-            for (int i = 0; i < tempArray.Length; i++)
-            {
-                lineRenderer.SetPosition(i, (Vector2)LightPositions[i]);
-                //tempArray[i] = (Vector2)LightPositions[i];
-            }
-
-            
-            
-        }
+        yield return new WaitForSeconds(0.1f);
+        creator.PathUpdated += UpdatePath;
+        UpdatePath();
     }
 
     private void Update()
@@ -70,6 +49,29 @@ public class LightOutput : BaseTile
         {
             DestroyImmediate(lineRenderer.gameObject);
             lineRenderer = null;
+        }
+
+        creator.PathUpdated -= UpdatePath;
+    }
+
+    void UpdatePath()
+    {
+        LightPositions = SquareGridCreator.instance.LightBouncePositions(arrayPosition, LightDirection);
+
+        if (lineRenderer == null)
+        {
+            lineRenderer = transform.GetChild(0).GetComponent<LineRenderer>();
+        }
+
+        if (lineRenderer != null)
+        {
+            Vector3[] tempArray = new Vector3[LightPositions.Length];
+            lineRenderer.positionCount = tempArray.Length;
+            
+            for (int i = 0; i < tempArray.Length; i++)
+            {
+                lineRenderer.SetPosition(i, (Vector2)LightPositions[i]);
+            }
         }
     }
 

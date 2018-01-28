@@ -115,3 +115,9 @@ public class AsteroidTileInspector : TileInspector
 {
 
 }
+
+[CustomEditor(typeof(RotateableSatellite))]
+public class RotateableSatelliteInspector : TileInspector
+{
+
+}

@@ -31,8 +31,26 @@ public class RotateableSatellite : ReflectSatellite, Interactable {
         Destroy(collider);
     }
 
+    //Left Click Anti-ClockWise, Right click Clock Wise
     public void Clicked(bool LeftClick)
     {
-        Debug.Log("Been tocuhed with a " + (LeftClick ? "Left" : "Right") + " click");
+        ReflectDirection = RotateVec(ReflectDirection, LeftClick ? -45f : 45f);
+
+        creator.OnPathUpdated();
+    }
+
+    Vector2Int RotateVec(Vector2Int RotateVec, float rotateAngle)
+    {
+        Vector2 tempVec = RotateVec;
+        tempVec = Quaternion.Euler(0f, 0f, rotateAngle) * tempVec;
+
+        return Vector2Int.RoundToInt(tempVec);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Vector2 reflectDir = (Vector2)ReflectDirection;
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)(Vector2)ReflectDirection);
     }
 }
