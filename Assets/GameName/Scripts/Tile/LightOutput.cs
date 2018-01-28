@@ -12,6 +12,20 @@ public class LightOutput : BaseTile
 
     IEnumerator Start()
     {
+        //Update Line Renderer with Output Colour
+        if(lineRenderer == null)
+        {
+            if(transform.childCount > 0)
+            {
+                lineRenderer = transform.GetChild(0).GetComponent<LineRenderer>();
+            }
+        }
+
+        if(lineRenderer != null)
+        {
+            lineRenderer.material.color = OutputColour;
+        }
+
         yield return new WaitForSeconds(0.1f);
         creator.PathUpdated += UpdatePath;
         UpdatePath();
@@ -38,7 +52,9 @@ public class LightOutput : BaseTile
 
         tileType = TileTypes.LightOutput;
 
-        GameObject tempLine = Instantiate((GameObject)Resources.Load("Light"), transform);
+        GameObject referenceObj = (GameObject)Resources.Load("Light");
+        GameObject tempLine = Instantiate(referenceObj, transform);
+        LineRenderer tempRender = referenceObj.GetComponent<LineRenderer>();
 
         lineRenderer = tempLine.GetComponent<LineRenderer>();
     }
@@ -56,7 +72,7 @@ public class LightOutput : BaseTile
 
     void UpdatePath()
     {
-        LightPositions = SquareGridCreator.instance.LightBouncePositions(arrayPosition, LightDirection);
+        LightPositions = creator.LightBouncePositions(arrayPosition, LightDirection, OutputColour);
 
         if (lineRenderer == null)
         {

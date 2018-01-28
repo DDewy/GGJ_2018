@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private MainMenuScreen m_MainMenu;
     [SerializeField] private LevelSelectScreen m_LevelSelect;
     [SerializeField] private ConfirmQuitScreen m_ConfirmQuit;
+    [SerializeField] private CreditsScreen m_Credits;
 
     private GameObject m_CurrentScreen;
 
@@ -27,6 +28,7 @@ public class MainMenu : MonoBehaviour
         //Assign Buttons
         m_MainMenu.StartButton.onClick.AddListener(delegate { ChangeScreen(Screens.LevelSelect); });
         m_MainMenu.QuitButton.onClick.AddListener(delegate { ChangeScreen(Screens.ConfirmQuit); });
+        m_MainMenu.CreditsButton.onClick.AddListener(delegate { ChangeScreen(Screens.Credits); });
 
         m_LevelSelect.BackButton.onClick.AddListener(delegate { ChangeScreen(Screens.MainMenu); });
         for (int i = 0; i < m_LevelSelect.LevelButtons.Length; i++)
@@ -36,11 +38,16 @@ public class MainMenu : MonoBehaviour
         
         m_ConfirmQuit.YesButton.onClick.AddListener(delegate { Application.Quit(); });
         m_ConfirmQuit.NoButton.onClick.AddListener(delegate { ChangeScreen(Screens.MainMenu); });
+
+        m_Credits.BackButton.onClick.AddListener(delegate { ChangeScreen(Screens.MainMenu); });
     }
 
     public void ChangeScreen(Screens changeToScreen)
     {
-        m_CurrentScreen.SetActive(false);
+        if(m_CurrentScreen != null)
+        {
+            m_CurrentScreen.SetActive(false);
+        }
 
         switch(changeToScreen)
         {
@@ -54,6 +61,10 @@ public class MainMenu : MonoBehaviour
 
             case Screens.MainMenu:
                 m_CurrentScreen = m_MainMenu.mainMenu;
+                break;
+
+            case Screens.Credits:
+                m_CurrentScreen = m_Credits.credits;
                 break;
 
             case Screens.NoScreen:
@@ -72,6 +83,7 @@ public class MainMenu : MonoBehaviour
         MainMenu, 
         ConfirmQuit, 
         LevelSelect,
+        Credits,
         NoScreen
     }
 
@@ -80,7 +92,7 @@ public class MainMenu : MonoBehaviour
     {
         [HideInInspector] public MainMenu menuOwner;
         public GameObject mainMenu;
-        public Button StartButton, QuitButton;
+        public Button StartButton, CreditsButton, QuitButton;
 
         public void Init()
         {
@@ -114,5 +126,13 @@ public class MainMenu : MonoBehaviour
         [HideInInspector] public MainMenu menuOwner;
         public GameObject confirmQuit;
         public Button YesButton, NoButton;
+    }
+
+    [System.Serializable]
+    public class CreditsScreen
+    {
+        [HideInInspector] public MainMenu menuOwner;
+        public GameObject credits;
+        public Button BackButton;
     }
 }
