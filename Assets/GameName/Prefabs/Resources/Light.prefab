@@ -54,7 +54,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a0f74b839b8c2d4fb213f632c60e508, type: 2}
+  - {fileID: 2100000, guid: 8dabc4ac079731440b50661d6f24f253, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,8 +121,8 @@ LineRenderer:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 4
+    numCapVertices: 5
     alignment: 0
     textureMode: 0
     generateLightingData: 0

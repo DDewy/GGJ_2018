@@ -14,9 +14,16 @@ public class SquareGridCreator : MonoBehaviour {
     #region DelegateStuff
     
     public event System.Action PathUpdated;
+    public event System.Action PrePathUpdate;
 
     public void OnPathUpdated()
     {
+        //Mainly meant for the light Combiners to clear their Pathing before it is reset
+        if(PrePathUpdate != null)
+        {
+            PrePathUpdate();
+        }
+        
         if (PathUpdated != null)
         {
             PathUpdated();
@@ -72,7 +79,7 @@ public class SquareGridCreator : MonoBehaviour {
     }
 
 
-    public Vector2Int[] LightBouncePositions(Vector2Int startPosition, Vector2Int aimingDirection)
+    public Vector2Int[] LightBouncePositions(Vector2Int startPosition, Vector2Int aimingDirection, Color lightColor)
     {
         BaseTile NextPostion = GridArray[startPosition.x][startPosition.y];
         List<Vector2Int> ReflectPositions = new List<Vector2Int>();
@@ -88,38 +95,64 @@ public class SquareGridCreator : MonoBehaviour {
             Vector2Int tempPosition = nullPosition;
             
             //Check if this Position is a Satalite
-            
-            if(NextPostion.tileType == BaseTile.TileTypes.Satalite || NextPostion.tileType == BaseTile.TileTypes.RotateSatellite)
-            {
-                //This is a satalite, this will update our heading
-                LastKnownHeading = NextPostion.GetComponent<ReflectSatellite>().ReflectDirection;
 
-                if(ReflectPositions.Contains(NextPostion.arrayPosition + WorldOffset))
-                {
-                    //Stop this here, since we are going to end up going in a loop
+            switch(NextPostion.tileType)
+            {
+                case BaseTile.TileTypes.Satalite:
+                case BaseTile.TileTypes.RotateSatellite:
+                    //This is a satalite, this will update our heading
+                    LastKnownHeading = NextPostion.GetComponent<ReflectSatellite>().ReflectDirection;
+
+                    if (ReflectPositions.Contains(NextPostion.arrayPosition + WorldOffset))
+                    {
+                        //Stop this here, since we are going to end up going in a loop
+                        ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
+                        NextPostion = null;
+                        break;
+                    }
+                    else
+                    {
+                        ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
+                    }
+                    break;
+
+                case BaseTile.TileTypes.LightTarget:
+                    TargetTile tempTarget = NextPostion.GetComponent<TargetTile>();
+
+                    if (lightColor == tempTarget.TargetColour)
+                    {
+                        ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
+                        NextPostion = null;
+                        break;
+                    }
+                    else
+                    {
+                        //Not Reached our Target
+                    }
+                    break;
+
+                case BaseTile.TileTypes.Asteroid:
+                    //End Here, Hit an Asteroid
                     ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
                     NextPostion = null;
                     break;
-                }
-                else
-                {
+
+                case BaseTile.TileTypes.CombineSatellite:
+                    //Check if we are searching for our selves
+                    if (NextPostion.arrayPosition == startPosition)
+                        break;
+                    
+                    //Tell Combine sataellite it has been hit 
+                    CombineSatellite tempCombine = NextPostion.GetComponent<CombineSatellite>();
+                    tempCombine.HitByColour(lightColor);
+                    //End the Light position for this colour
                     ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
-                }
+                    NextPostion = null;
+                    break;
             }
-            else if(NextPostion.tileType == BaseTile.TileTypes.LightTarget)
-            {
-                //TODO Check if the Color is the right Colour for this target
-                ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
-                NextPostion = null;
+
+            if (NextPostion == null)
                 break;
-            }
-            else if(NextPostion.tileType == BaseTile.TileTypes.Asteroid)
-            {
-                //End Here, Hit an Asteroid
-                ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
-                NextPostion = null;
-                break;
-            }
 
             //Basic Tile, Keep Heading in Direction and Till we reach the end
             tempPosition = NextPostion.arrayPosition + LastKnownHeading;

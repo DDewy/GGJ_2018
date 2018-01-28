@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameInstance : MonoBehaviour {
     public static GameInstance instance;
     public string GameLevelName;
+    public AudioListener MainMenuListener;
 
     
 
@@ -36,7 +37,9 @@ public class GameInstance : MonoBehaviour {
                 UIManager.instance.SwitchToUI(UIManager.UIScreens.GameUI);
 
                 //Load Game Scene
-                SceneManager.LoadScene(GameLevelName);
+                SceneManager.LoadScene(GameLevelName, LoadSceneMode.Additive);
+
+                MainMenuListener.enabled = false;
                 break;
 
             case GameState.MainMenu:
@@ -44,8 +47,12 @@ public class GameInstance : MonoBehaviour {
                 SceneManager.UnloadSceneAsync(GameLevelName);
                 //Turn off GameUI and Turn on MenuUI
                 UIManager.instance.SwitchToUI(UIManager.UIScreens.MainMenuUI);
+
+                MainMenuListener.enabled = true;
                 break;
         }
+
+        currentState = newState;
     }
 
     public enum GameState

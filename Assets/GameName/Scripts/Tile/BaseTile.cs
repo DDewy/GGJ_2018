@@ -45,6 +45,10 @@ public abstract class BaseTile : MonoBehaviour
                 newTile = originalTile.gameObject.AddComponent<RotateableSatellite>();
                 break;
 
+            case TileTypes.CombineSatellite:
+                newTile = originalTile.gameObject.AddComponent<CombineSatellite>();
+                break;
+
             case TileTypes.LightOutput:
                 newTile = originalTile.gameObject.AddComponent<LightOutput>();
                 break;
@@ -79,6 +83,7 @@ public abstract class BaseTile : MonoBehaviour
         LightOutput,
         LightTarget,
         Asteroid,
-        RotateSatellite
+        RotateSatellite,
+        CombineSatellite
     }
 }

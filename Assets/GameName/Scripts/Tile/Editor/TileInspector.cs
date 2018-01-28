@@ -30,10 +30,19 @@ public class TileInspector : Editor
             ChangeTo(Tile.TileTypes.RotateSatellite);
         }
 
+        if(GUILayout.Button("Comb Satellite"))
+        {
+            ChangeTo(BaseTile.TileTypes.CombineSatellite);
+        }
+
         if (GUILayout.Button("Light Output"))
         {
             ChangeTo(Tile.TileTypes.LightOutput);
         }
+
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
 
         if (GUILayout.Button("Target"))
         {
@@ -118,6 +127,12 @@ public class AsteroidTileInspector : TileInspector
 
 [CustomEditor(typeof(RotateableSatellite))]
 public class RotateableSatelliteInspector : TileInspector
+{
+
+}
+
+[CustomEditor(typeof(CombineSatellite))]
+public class CombineSatelliteInspector : TileInspector
 {
 
 }
