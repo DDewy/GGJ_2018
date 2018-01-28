@@ -6,6 +6,7 @@ public class LightOutput : BaseTile
 {
     public Vector2Int[] LightPositions;
     public Vector2Int LightDirection;
+    public Color OutputColour;
 
     private LineRenderer lineRenderer;
 
@@ -15,16 +16,25 @@ public class LightOutput : BaseTile
 
         LightPositions = SquareGridCreator.instance.LightBouncePositions(arrayPosition, LightDirection);
 
+        if(lineRenderer == null)
+        {
+            lineRenderer = transform.GetChild(0).GetComponent<LineRenderer>();
+        }
+
         if(lineRenderer != null)
         {
             Vector3[] tempArray = new Vector3[LightPositions.Length];
+            lineRenderer.positionCount = tempArray.Length;
 
-            for(int i = 0; i < tempArray.Length; i++)
+
+            for (int i = 0; i < tempArray.Length; i++)
             {
-                tempArray[i] = (Vector2)LightPositions[i];
+                lineRenderer.SetPosition(i, (Vector2)LightPositions[i]);
+                //tempArray[i] = (Vector2)LightPositions[i];
             }
 
-            lineRenderer.SetPositions(tempArray);
+            
+            
         }
     }
 
