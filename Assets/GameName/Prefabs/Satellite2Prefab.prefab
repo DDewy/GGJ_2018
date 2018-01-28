@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33309332222078716}
   - component: {fileID: 23207952905865350}
   m_Layer: 0
-  m_Name: sat 2
+  m_Name: Satellite2Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

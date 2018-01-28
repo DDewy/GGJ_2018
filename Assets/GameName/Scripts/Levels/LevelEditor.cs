@@ -7,12 +7,6 @@ using UnityEditor;
 
 public class LevelEditor : MonoBehaviour {
 
-    //NEED TO ADD/SET TARGET COLOUR
-    //NEED TO ADD/SET OUTPUT COLOUR
-
-        //changing getLevel extensively. 
-            // square grid: 
-
     public int levelToLoad;
     public string filePath = "null";
 
@@ -44,17 +38,14 @@ public class LevelEditor : MonoBehaviour {
             tileCoords.Insert(tileNum, V2Extract);
         }
 
-        //****clear level here somehow
-        Debug.Log("Remember to clear/create the grid before this");
+        Debug.Log("Remember to clear, create and rename the grid before this");
 
         //set our custom tiles
         for (int i = 0; i < levelSplit.Count; i++)
         {
             string tileInfo = levelSplit[i];
-            //Debug.Log(tileInfo);                  
 
             //extract tile type
-            Debug.Log("Tile Type is " + tileInfo.Substring(0, tileInfo.IndexOf('(')));
             BaseTile.TileTypes tileType = (BaseTile.TileTypes)System.Enum.Parse(typeof(BaseTile.TileTypes),tileInfo.Substring(0, tileInfo.IndexOf('(')));
 
             //extract tile coords
@@ -65,30 +56,45 @@ public class LevelEditor : MonoBehaviour {
             int findNum = tileCoords.IndexOf(V2Extract);
             BaseTile target = existingTiles[findNum];
 
-            target.ChangeTo(tileType);
-            Debug.Log("set to " + target.tileType.ToString());
-            target.AssignNewTile(V2Extract);
-
-            Debug.Log(tileInfo + " converted to " + V2Extract.ToString());
+            BaseTile.ChangeTo(tileType, target);
+            //***********get target return yeehaw
 
             //set satellite/output values
             if (tileInfo.Contains("+"))
             {
-                int extraVal = tileInfo.IndexOf('+');
-                ExtractVector2Int(tileInfo.Substring(extraVal), out V2Extract);
-                Debug.Log("Extracting Vector from: " + tileInfo.Substring(extraVal) + "-- extracted: " + V2Extract);
+                string extraVal = tileInfo.Substring(tileInfo.IndexOf('+'));
                 if (target.tileType == BaseTile.TileTypes.Satalite)
                 {
+                    ExtractVector2Int(extraVal, out V2Extract);
                     (target as ReflectSatellite).ReflectDirection = V2Extract;
                 }
                 if (target.tileType == BaseTile.TileTypes.LightOutput)
                 {
-                    (target as LightOutput).LightDirection = V2Extract;
-                    //***extract and set colour
+                    string[] extraVals = extraVal.Split('+');
+                    for (int val = 0; val < extraVals.Length; val++)
+                    {
+                        if (val == 0)
+                        {
+                            //light direction
+                            ExtractVector2Int(extraVals[val], out V2Extract);
+                            (target as LightOutput).LightDirection = V2Extract;
+                        }
+                        else
+                        {
+                            //target colour
+                            Color col;
+                            extractColor(extraVals[val], out col);
+                            (target as LightOutput).OutputColour = col;
+                            Debug.Log("Got Colour: " + col);
+                        }
+                    }                    
                 }
                 if (target.tileType == BaseTile.TileTypes.LightTarget)
                 {
-                    //***extract and set target colour
+                    Color col;
+                    extractColor(extraVal, out col);
+                    (target as TargetTile).TargetColour = col;
+                    Debug.Log("Got Colour: " + col);
                 }
             }            
         }
@@ -96,16 +102,24 @@ public class LevelEditor : MonoBehaviour {
 
     private void ExtractVector2Int(string inString, out Vector2Int output)
     {
-        int endOfX = inString.IndexOf(',');
-        int endOfY = inString.IndexOf(')');
-        int startOfX = inString.IndexOf('(') + 1;
-        int startOfY = endOfX + 1;
-        //Debug.Log(inString.Substring(startOfX, endOfY - startOfX));
-        //Debug.Log("X is " + inString.Substring(startOfX, (endOfX - startOfX)));        
-        //Debug.Log("Y is " + inString.Substring(startOfY, (endOfY - startOfY)));        
-        int x = int.Parse(inString.Substring(startOfX, (endOfX - startOfX)));
-        int y = int.Parse(inString.Substring(startOfY, (endOfY - startOfY)));
+        inString = inString.TrimStart('(');
+        inString = inString.TrimEnd(')');
+        string[] values = inString.Split(',');
+        int x = int.Parse(values[0]);
+        int y = int.Parse(values[1]);
         output = new Vector2Int(x, y);
+    }
+
+    private void extractColor(string inString, out Color output)
+    {
+        inString = inString.TrimStart('(');
+        inString = inString.TrimEnd(')');
+        string[] values = inString.Split(',');
+        int r = int.Parse(values[0]);
+        int g = int.Parse(values[1]);
+        int b = int.Parse(values[2]);
+        int a = int.Parse(values[3]);
+        output = new Vector4(r, g, b, a);
     }
 
     public void storeLevel()
@@ -151,7 +165,6 @@ public class LevelEditorEditor : Editor
     {    
         DrawDefaultInspector();
         LevelEditor myLevel = (LevelEditor)target;
-        int levelToLoad = myLevel.levelToLoad;
         if (GUILayout.Button("Get Level"))
         {
             
