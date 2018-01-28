@@ -91,9 +91,9 @@ public class SquareGridCreatorInspector : Editor
             Transform tileTrans = creator.transform.GetChild(i);
             BaseTile tempTile = tileTrans.GetComponent<BaseTile>();
 
-            Debug.Log("FoundTile");
+            Debug.Log("FoundTile Position: " + tempTile.arrayPosition, tempTile.gameObject);
 
-            TempGridRef[tempTile.arrayPosition.x][tempTile.arrayPosition.y] = tempTile;
+            TempGridRef[tempTile.arrayPosition.x][tempTile.arrayPosition.y] = tempTile as BaseTile;
         }
 
         creator.GridArray = TempGridRef;

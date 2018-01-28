@@ -141,4 +141,9 @@ public class SquareGridCreator : MonoBehaviour {
 
         GridArray = null;
     }
+
+    public void RebuildGrid()
+    {
+        
+    }
 }
