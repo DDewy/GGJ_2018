@@ -7,6 +7,7 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] private PauseScreen m_PauseScreen;
     [SerializeField] private CompleteLevelScreen m_CompleteLevelScreen;
+    [SerializeField] private GameUIScreen m_GameUI;
 
     private GameObject m_CurrentScreen;
 
@@ -16,6 +17,20 @@ public class GameUI : MonoBehaviour
 
         //Set up Buttons
         m_PauseScreen.BackToMenuButton.onClick.AddListener(BackToMainMenu);
+        m_PauseScreen.ResumeButton.onClick.AddListener(delegate { ChangeToScreen(GameScreens.GameUIScreen); });
+
+        m_GameUI.PauseButton.onClick.AddListener(delegate { ChangeToScreen(GameScreens.PauseScreen); });
+
+        m_CompleteLevelScreen.BackToMenuButton.onClick.AddListener(BackToMainMenu);
+        //m_CompleteLevelScreen.NextLevelButton.onClick.AddListener(SomeCodeFunction);
+
+        //Set GameUI as the Starting UI
+        m_PauseScreen.pauseObject.SetActive(false);
+        m_CompleteLevelScreen.completeLevelObject.SetActive(false);
+        m_GameUI.gameUIObject.SetActive(false);
+
+        //Game UI is starting UI
+        m_GameUI.gameUIObject.SetActive(true);
     }
 
     public void ChangeToScreen(GameScreens newScreen)
@@ -38,11 +53,15 @@ public class GameUI : MonoBehaviour
             case GameScreens.PauseScreen:
                 m_CurrentScreen = m_PauseScreen.pauseObject;
                 break;
+
+            case GameScreens.GameUIScreen:
+                m_CurrentScreen = m_GameUI.gameUIObject;
+                break;
         }
 
         if(m_CurrentScreen != null)
         {
-            m_CurrentScreen.SetActive(false);
+            m_CurrentScreen.SetActive(true);
         }
     }
 
@@ -58,7 +77,8 @@ public class GameUI : MonoBehaviour
     public enum GameScreens
     {
         PauseScreen,
-        CompleteLevelScreen, 
+        CompleteLevelScreen,
+        GameUIScreen,
         NoScreen
     }
 
@@ -74,5 +94,12 @@ public class GameUI : MonoBehaviour
     {
         public GameObject completeLevelObject;
         public Button BackToMenuButton, NextLevelButton;
+    }
+
+    [System.Serializable]
+    public class GameUIScreen
+    {
+        public GameObject gameUIObject;
+        public Button PauseButton;
     }
 }

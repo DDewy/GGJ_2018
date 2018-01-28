@@ -60,6 +60,8 @@ public class UIManager : MonoBehaviour
         {
             case UIScreens.GameUI:
                 gameUI.gameObject.SetActive(true);
+                //Default Game UI Screen
+                gameUI.ChangeToScreen(GameUI.GameScreens.GameUIScreen);
                 break;
 
             case UIScreens.MainMenuUI:
