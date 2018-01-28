@@ -72,6 +72,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ShowCompleteLevel()
+    {
+        gameUI.ChangeToScreen(GameUI.GameScreens.CompleteLevelScreen);
+    }
+
 
     public enum UIScreens
     {

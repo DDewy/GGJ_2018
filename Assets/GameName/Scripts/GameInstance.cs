@@ -8,7 +8,7 @@ public class GameInstance : MonoBehaviour {
     public string GameLevelName;
     public AudioListener MainMenuListener;
 
-    
+    private int levelIndex;
 
     private GameState currentState = GameState.MainMenu;
 
@@ -38,6 +38,7 @@ public class GameInstance : MonoBehaviour {
 
                 //Load Game Scene
                 SceneManager.LoadScene(GameLevelName, LoadSceneMode.Additive);
+                
 
                 MainMenuListener.enabled = false;
                 break;
@@ -53,6 +54,56 @@ public class GameInstance : MonoBehaviour {
         }
 
         currentState = newState;
+    }
+
+    public void LoadLevel(int levelIndex)
+    {
+        SceneManager.sceneLoaded += GameLevelLoaded;
+
+        this.levelIndex = levelIndex;
+    }
+
+    void GameLevelLoaded(Scene loadedScene, LoadSceneMode loadMode)
+    {
+        if(loadedScene.buildIndex == 1)
+        {
+            //Load Level if we have Reference to Scene
+
+            //Grid Creator, Clear, Create, Rename
+            GameObject[] rootObjects = loadedScene.GetRootGameObjects();
+            GameObject SquareGridRef = null;
+            for(int i = 0; i < rootObjects.Length; i++)
+            {
+                if(rootObjects[i].name == "SquareGrid")
+                {
+                    SquareGridRef = rootObjects[i];
+                    break;
+                }
+            }
+
+            SquareGridCreator creator = SquareGridRef.GetComponent<SquareGridCreator>();
+
+            creator.ClearGrid();
+            creator.CreateGrid();
+            creator.RenameGrid();
+
+            //Get Level Editor, Get Level of Index
+            LevelEditor tempEditor = SquareGridRef.GetComponent<LevelEditor>();
+            Debug.Log("Load Level Index: " + levelIndex);
+            tempEditor.getLevel(levelIndex);
+
+            SceneManager.sceneLoaded -= GameLevelLoaded;
+
+            creator.LevelComplete += LevelCompleted;
+        }
+
+    }
+
+    void LevelCompleted(SquareGridCreator creator)
+    {
+        creator.LevelComplete -= LevelCompleted;
+
+        UIManager.instance.ShowCompleteLevel();
     }
 
     public enum GameState

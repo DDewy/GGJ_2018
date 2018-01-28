@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombineSatellite : ReflectSatellite
+public class CombineSatellite : RotateableSatellite
 {
     private List<Color> inputColours;
     private LineRenderer lineRenderer;

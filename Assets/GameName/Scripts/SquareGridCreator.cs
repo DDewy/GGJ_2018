@@ -10,11 +10,13 @@ public class SquareGridCreator : MonoBehaviour {
     public Vector2Int WorldOffset;
     public GameObject SquareRef;
     public BaseTile[][] GridArray;
+    public TargetTile[] TargetTiles;
 
     #region DelegateStuff
-    
+    public delegate void SquareGridCalls(SquareGridCreator self);
     public event System.Action PathUpdated;
     public event System.Action PrePathUpdate;
+    public event SquareGridCalls LevelComplete;
 
     public void OnPathUpdated()
     {
@@ -27,6 +29,14 @@ public class SquareGridCreator : MonoBehaviour {
         if (PathUpdated != null)
         {
             PathUpdated();
+        }
+    }
+
+    void OnLevelComplete()
+    {
+        if(LevelComplete != null)
+        {
+            LevelComplete(this);
         }
     }
 
@@ -76,6 +86,24 @@ public class SquareGridCreator : MonoBehaviour {
                 
             }
         }
+
+        GetComponent<LevelEditor>().levelLoaded += FindTargets;
+    }
+
+    void FindTargets()
+    {
+        List<TargetTile> tempTargets = new List<TargetTile>();
+
+        for (int i = 0; i < Width; i++)
+        {
+            for (int p = 0; p < Height; p++)
+            {
+                if (GridArray[i][p].tileType == BaseTile.TileTypes.LightTarget)
+                {
+                    tempTargets.Add(GridArray[i][p].GetComponent<TargetTile>());
+                }
+            }
+        }
     }
 
 
@@ -121,6 +149,7 @@ public class SquareGridCreator : MonoBehaviour {
 
                     if (lightColor == tempTarget.TargetColour)
                     {
+                        tempTarget.HitByLight();
                         ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
                         NextPostion = null;
                         break;
@@ -174,6 +203,51 @@ public class SquareGridCreator : MonoBehaviour {
         return ReflectPositions.ToArray();
     }
 
+    void CheckIfComplete()
+    {
+        //Look Through all targets to see if they are being 
+        bool allComplete = true;
+
+        for(int i = 0; i < TargetTiles.Length; i++)
+        {
+            if(!TargetTiles[i].hasLight)
+            {
+                allComplete = false;
+            }
+        }
+
+        OnLevelComplete();
+    }
+
+    public void CreateGrid()
+    {
+        //Initalize Grid
+        BaseTile[][] TempGridRef = new BaseTile[Width][];
+
+        for (int i = 0; i < TempGridRef.Length; i++)
+        {
+            TempGridRef[i] = new BaseTile[Height];
+        }
+
+        //Setup the Grid Size
+        GridArray = TempGridRef;
+
+        //const int SquareSpacing = 1;
+        int xOffset = Width / 2, yOffset = Height / 2;
+        WorldOffset = new Vector2Int(-xOffset, -yOffset);
+
+        for (int i = 0; i < TempGridRef.Length; i++)
+        {
+            for (int p = 0; p < TempGridRef[i].Length; p++)
+            {
+                GameObject TempTile = Instantiate(SquareRef, transform);
+                TempTile.transform.localPosition = new Vector3Int(i - xOffset, p - yOffset, 0);
+                TempTile.GetComponent<BaseTile>().AssignNewTile(new Vector2Int(i, p), this);
+            }
+        }
+        Debug.Log("Reached the end of the Creation Array");
+    }
+
     public void ClearGrid()
     {
         BaseTile[][] TempArray = GridArray;
@@ -198,6 +272,32 @@ public class SquareGridCreator : MonoBehaviour {
         }
 
         GridArray = null;
+    }
+
+    public void RenameGrid()
+    {
+        //Initalize Grid
+        BaseTile[][] TempGridRef = new BaseTile[Width][];
+
+        for (int i = 0; i < TempGridRef.Length; i++)
+        {
+            TempGridRef[i] = new BaseTile[Height];
+        }
+
+        for (int i = 0; i < TempGridRef.Length; i++)
+        {
+            for (int p = 0; p < TempGridRef[i].Length; p++)
+            {
+                int childNum = (i * Height) + p;
+
+                Transform tileTrans = transform.GetChild(childNum);
+                tileTrans.name = "GameSquare(" + i + "," + p + ")" + " num: " + childNum;
+            }
+        }
+
+        GridArray = TempGridRef;
+
+        Debug.Log("Refreshed Array");
     }
 
     public void RebuildGrid()

@@ -33,7 +33,7 @@ public class MainMenu : MonoBehaviour
         m_LevelSelect.BackButton.onClick.AddListener(delegate { ChangeScreen(Screens.MainMenu); });
         for (int i = 0; i < m_LevelSelect.LevelButtons.Length; i++)
         {
-            m_LevelSelect.LevelButtons[i].onClick.AddListener(delegate { m_LevelSelect.OpenLevel(i); });
+            m_LevelSelect.LevelButtons[i].transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = i.ToString();
         }
         
         m_ConfirmQuit.YesButton.onClick.AddListener(delegate { Application.Quit(); });
@@ -77,6 +77,10 @@ public class MainMenu : MonoBehaviour
     }
 
     //Main Menu Functions
+    public void LoadLevel(int index)
+    {
+        m_LevelSelect.OpenLevel(index);
+    }
 
     public enum Screens
     {
@@ -117,6 +121,7 @@ public class MainMenu : MonoBehaviour
             GameInstance.instance.ChangeGameState(GameInstance.GameState.Gameplay);
 
             //TO DO - Load Level from the index
+            GameInstance.instance.LoadLevel(index);
         }
     }
 

@@ -10,6 +10,20 @@ public class LevelEditor : MonoBehaviour {
     public int levelToLoad;
     public string filePath = "null";
 
+    #region Delegate
+
+    public event System.Action levelLoaded;
+
+    void OnLevelLoaded()
+    {
+        if(levelLoaded != null)
+        {
+            levelLoaded();
+        }
+    }
+
+    #endregion
+
     public void setFilePath()
     {
         filePath = Path.Combine(Application.dataPath, "GameName/Scripts/Levels/");
