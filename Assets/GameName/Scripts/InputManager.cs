@@ -28,5 +28,16 @@ public class InputManager : MonoBehaviour {
                 tempHit.collider.GetComponent<Interactable>().Clicked(true);
             }
         }
+        else if(Input.GetMouseButtonDown(1))
+        {
+            Ray clickRay = playerCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit tempHit;
+            Physics.Raycast(clickRay, out tempHit);
+
+            if (tempHit.collider != null)
+            {
+                tempHit.collider.GetComponent<Interactable>().Clicked(false);
+            }
+        }
 	}
 }
