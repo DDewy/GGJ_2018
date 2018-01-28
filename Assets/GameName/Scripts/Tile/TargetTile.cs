@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TargetTile : BaseTile
 {
+    public Color TargetColour;
+
     public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
     {
         base.AssignNewTile(arrayPosition, creator);
