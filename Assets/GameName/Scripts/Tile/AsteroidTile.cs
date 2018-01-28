@@ -16,5 +16,8 @@ public class AsteroidTile : BaseTile
         }
 
         tileType = TileTypes.Asteroid;
+
+        GameObject refPrefab = (GameObject)Resources.Load("AsteroidPrefab");
+        Instantiate(refPrefab, transform);
     }
 }
