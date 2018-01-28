@@ -17,7 +17,7 @@ public class LevelEditor : MonoBehaviour {
 
     public void getLevel (int levelNum)
     {
-        if (filePath == "null") setFilePath();
+        setFilePath();
 
         //level num is a string so that it can separate and also be more specific - e.g. 001 instead of 1. There is reason to my madness.
         string levelFile = File.ReadAllText(filePath + "LevelData.txt");
@@ -138,7 +138,7 @@ public class LevelEditor : MonoBehaviour {
 
     public void storeLevel()
     {
-        if (filePath == "null") setFilePath();
+        setFilePath();
 
         GameObject squareGrid = GameObject.Find("SquareGrid");
         BaseTile[] allTiles = squareGrid.GetComponentsInChildren<BaseTile>();
