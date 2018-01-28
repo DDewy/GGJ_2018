@@ -189,7 +189,8 @@ public class LevelEditorEditor : Editor
         }
         if (GUILayout.Button("Store Level"))
         {
-            myLevel.storeLevel();
+            Debug.Log("Disabled in script.");
+            //myLevel.storeLevel();
         }
     }
 }
