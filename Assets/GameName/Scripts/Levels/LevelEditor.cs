@@ -17,14 +17,15 @@ public class LevelEditor : MonoBehaviour {
 
     public void getLevel (int levelNum)
     {
-        if (filePath == "null") setFilePath();
+        setFilePath();
 
         //level num is a string so that it can separate and also be more specific - e.g. 001 instead of 1. There is reason to my madness.
         string levelFile = File.ReadAllText(filePath + "LevelData.txt");
-        List<string> levelSplit = levelFile.Split(';').ToList<string>();
+        List<string> levelSplit = levelFile.Split(';').ToList<string>();        
+        Debug.Log(levelSplit.Count); //last index is blank
+        Debug.Log(levelSplit[levelToLoad]);
 
         string fullLevelString = levelSplit[(levelNum)].TrimStart('|');
-        //Debug.Log(fullLevelString);
         levelSplit = fullLevelString.Split('|').ToList<string>();
         
         List<BaseTile> existingTiles = GameObject.Find("SquareGrid").transform.GetComponentsInChildren<BaseTile>().ToList();
@@ -38,13 +39,15 @@ public class LevelEditor : MonoBehaviour {
             tileCoords.Insert(tileNum, V2Extract);
         }
 
-        Debug.Log("Remember to clear, create and rename the grid before this");
+        Debug.Log("Remember to clear, create and rename the grid before this");       
 
         //set our custom tiles
-        for (int i = 0; i < levelSplit.Count; i++)
+        for (int i = (levelToLoad == 0) ? 0 : 1; i < levelSplit.Count; i++)
         {
-            string tileInfo = levelSplit[i];
+            string tileInfo = levelSplit[i];            
+            Debug.Log("TileInfo: " + tileInfo);
 
+            Debug.Log(tileInfo + " is getting tileType");
             //extract tile type
             BaseTile.TileTypes tileType = (BaseTile.TileTypes)System.Enum.Parse(typeof(BaseTile.TileTypes),tileInfo.Substring(0, tileInfo.IndexOf('(')));
 
@@ -55,8 +58,7 @@ public class LevelEditor : MonoBehaviour {
             //get current and set tile values
             int findNum = tileCoords.IndexOf(V2Extract);
             BaseTile target = existingTiles[findNum];
-
-            BaseTile.ChangeTo(tileType, target);
+            target = BaseTile.ChangeTo(tileType, target);
             //***********get target return yeehaw
 
             //set satellite/output values
@@ -71,19 +73,22 @@ public class LevelEditor : MonoBehaviour {
                 if (target.tileType == BaseTile.TileTypes.LightOutput)
                 {
                     string[] extraVals = extraVal.Split('+');
-                    for (int val = 0; val < extraVals.Length; val++)
+                    //0 is a blank value... much better ways to do this but I am being #lazy
+                    bool doneDirection = false;
+                    foreach (string val in extraVals)
                     {
-                        if (val == 0)
+                        if (doneDirection == false && val.Length > 1)
                         {
                             //light direction
-                            ExtractVector2Int(extraVals[val], out V2Extract);
+                            ExtractVector2Int(val, out V2Extract);
+                            Debug.Log(extraVal + " returned " + val + " to " + V2Extract);
                             (target as LightOutput).LightDirection = V2Extract;
                         }
-                        else
+                        else if (val.Length > 1)
                         {
                             //target colour
                             Color col;
-                            extractColor(extraVals[val], out col);
+                            extractColor(val, out col);
                             (target as LightOutput).OutputColour = col;
                             Debug.Log("Got Colour: " + col);
                         }
@@ -102,29 +107,38 @@ public class LevelEditor : MonoBehaviour {
 
     private void ExtractVector2Int(string inString, out Vector2Int output)
     {
-        inString = inString.TrimStart('(');
-        inString = inString.TrimEnd(')');
-        string[] values = inString.Split(',');
-        int x = int.Parse(values[0]);
-        int y = int.Parse(values[1]);
-        output = new Vector2Int(x, y);
+        if (inString.Length <= 1)
+        {
+            Debug.Log("inString is " + inString + ", what the fuck.");
+            output = new Vector2Int(99, 99);
+        }
+        else
+        {
+            inString = inString.Substring(inString.IndexOf('(') + 1, inString.IndexOf(')') - (inString.IndexOf('(') + 1));
+            string[] values = inString.Split(',');
+            int x, y;
+            int.TryParse(values[0], out x);
+            int.TryParse(values[1], out y);
+            output = new Vector2Int(x, y);
+        }
     }
 
     private void extractColor(string inString, out Color output)
     {
-        inString = inString.TrimStart('(');
-        inString = inString.TrimEnd(')');
+        //inString = inString.Substring(inString.IndexOf('(') + 1, inString.IndexOf(')') - inString.IndexOf('(') + 1);
+        //Debug.Log("Trimmed: " + inString);
         string[] values = inString.Split(',');
-        int r = int.Parse(values[0]);
-        int g = int.Parse(values[1]);
-        int b = int.Parse(values[2]);
-        int a = int.Parse(values[3]);
+        int r, g, b, a;
+        int.TryParse(values[0], out r);
+        int.TryParse(values[1], out g);
+        int.TryParse(values[2], out b);
+        int.TryParse(values[3], out a);
         output = new Vector4(r, g, b, a);
     }
 
     public void storeLevel()
     {
-        if (filePath == "null") setFilePath();
+        setFilePath();
 
         GameObject squareGrid = GameObject.Find("SquareGrid");
         BaseTile[] allTiles = squareGrid.GetComponentsInChildren<BaseTile>();
@@ -133,18 +147,22 @@ public class LevelEditor : MonoBehaviour {
         foreach (BaseTile tile in allTiles)
         {
             if (tile.tileType != BaseTile.TileTypes.Tile)
-            {
+            { 
                 levelValues = levelValues + "|" + tile.tileType.ToString() + (tile as BaseTile).arrayPosition.ToString();
+
+                //bonus tile information (append with a + sign)
                 if (tile.tileType == BaseTile.TileTypes.Satalite)
                 {
                     levelValues = levelValues + "+" + (tile as ReflectSatellite).ReflectDirection.ToString();
                 }
                 else if (tile.tileType == BaseTile.TileTypes.LightOutput)
                 {
-                    levelValues = levelValues + "+" + (tile as LightOutput).LightDirection.ToString();
+                    levelValues = levelValues + "+" + (tile as LightOutput).LightDirection.ToString() + "+" + (tile as LightOutput).OutputColour.ToString();
                 }
-                //we need ReflectDirection from Satellite and LightDirection from Outputter.Set after Assign.
-                //append with '+' in front.
+                else if (tile.tileType == BaseTile.TileTypes.LightTarget)
+                {
+                    levelValues = levelValues + "+" + (tile as TargetTile).TargetColour.ToString();
+                }
             }
         }
 
@@ -166,8 +184,7 @@ public class LevelEditorEditor : Editor
         DrawDefaultInspector();
         LevelEditor myLevel = (LevelEditor)target;
         if (GUILayout.Button("Get Level"))
-        {
-            
+        {            
             myLevel.getLevel(myLevel.levelToLoad);
         }
         if (GUILayout.Button("Store Level"))

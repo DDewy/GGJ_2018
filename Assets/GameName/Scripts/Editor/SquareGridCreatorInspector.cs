@@ -28,6 +28,10 @@ public class SquareGridCreatorInspector : Editor
         }
 
         GUILayout.Label(creator.GridArray == null ? "Grid Needs Refreshing" : "Grid Reference is Fine");
+        if(creator.GridArray == null)
+        {
+            RefreshGrid();
+        }
 
         if(GUILayout.Button("Rename Grid"))
         {

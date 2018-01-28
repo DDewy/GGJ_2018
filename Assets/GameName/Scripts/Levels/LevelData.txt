@@ -1,1 +1,0 @@
-|LightTarget(2, 3)|Satalite(2, 11)+(0, 0)|Asteroid(3, 14)|LightTarget(7, 3)|Asteroid(7, 9)|LightOutput(8, 15)+(0, 0);
