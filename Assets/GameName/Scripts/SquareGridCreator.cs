@@ -109,6 +109,13 @@ public class SquareGridCreator : MonoBehaviour {
 
     public Vector2Int[] LightBouncePositions(Vector2Int startPosition, Vector2Int aimingDirection, Color lightColor)
     {
+        if(aimingDirection == Vector2Int.zero)
+        {
+            //If there is no direction then it can go no where, so lets just stop it here otherwise it will be stuck in a infinite loop
+            Vector2Int[] tempArray = { startPosition };
+            return tempArray;
+        }
+
         BaseTile NextPostion = GridArray[startPosition.x][startPosition.y];
         List<Vector2Int> ReflectPositions = new List<Vector2Int>();
         Vector2Int LastKnownHeading = aimingDirection;

@@ -31,14 +31,6 @@ public class LightOutput : BaseTile
         UpdatePath();
     }
 
-    private void Update()
-    {
-        for(int i = 0; i < LightPositions.Length - 1; i++)
-        {
-            Debug.DrawLine((Vector2)LightPositions[i], (Vector2)LightPositions[i + 1]);
-        }
-    }
-
     public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
     {
         base.AssignNewTile(arrayPosition, creator);
