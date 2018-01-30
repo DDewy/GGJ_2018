@@ -76,13 +76,71 @@ public class LightOutput : BaseTile
 
         if (lineRenderer != null)
         {
+            bool bInstantBeam = false;
+
             Vector3[] tempArray = new Vector3[LightPositions.Length];
-            lineRenderer.positionCount = tempArray.Length;
+
+            if (bInstantBeam)
+            {
+                lineRenderer.positionCount = tempArray.Length;
+            }
             
             for (int i = 0; i < tempArray.Length; i++)
             {
-                lineRenderer.SetPosition(i, (Vector2)LightPositions[i]);
+                if(bInstantBeam)
+                {
+                    lineRenderer.SetPosition(i, (Vector2)LightPositions[i]);
+                }
+                else
+                {
+                    tempArray[i] = (Vector2)LightPositions[i];
+                }
+                
             }
+
+            if(!bInstantBeam)
+            {
+                StartCoroutine(MoveLightBeam(tempArray));
+            }
+        }
+    }
+    //1 Unit Per second. 1 unit = 1 square
+    const float moveRate = 20f;
+
+    IEnumerator MoveLightBeam(Vector3[] endPositionArray)
+    {
+        //Set up inital light beam
+        //Vector3[] currentPoints = new Vector3();
+        
+
+        for (int index = 1; index < endPositionArray.Length; index++)
+        {
+            //Set up the Line Renderer
+            lineRenderer.positionCount = index + 1;
+            lineRenderer.SetPosition(index - 1, endPositionArray[index - 1]);
+
+            //for(int i = 0; i < index; i++)
+            //{
+            //    lineRenderer.SetPosition(i, endPositionArray[i]);
+            //}
+
+            //Setting up end point for its starting position
+            Vector3 endPoint = endPositionArray[index - 1];
+            
+            Vector3 vecToEndPoint = endPoint - endPositionArray[index - 1],
+                vecToCurrentIndex = endPositionArray[index] - endPositionArray[index - 1];
+
+            //While the end of the light is closer than the next point lets keep pushing it forward
+            while(vecToEndPoint.magnitude < vecToCurrentIndex.magnitude)
+            {
+                endPoint += vecToCurrentIndex.normalized * Time.deltaTime * moveRate;
+                vecToEndPoint = endPoint - endPositionArray[index - 1];
+                //Update the LineRenderer
+                lineRenderer.SetPosition(index, endPoint);
+                yield return null;
+            }
+
+            
         }
     }
 
