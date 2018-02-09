@@ -25,11 +25,6 @@ public class TileInspector : Editor
             ChangeTo(Tile.TileTypes.Satalite);
         }
 
-        if(GUILayout.Button("RotSatellite"))
-        {
-            ChangeTo(Tile.TileTypes.RotateSatellite);
-        }
-
         if(GUILayout.Button("Comb Satellite"))
         {
             ChangeTo(BaseTile.TileTypes.CombineSatellite);
@@ -54,54 +49,21 @@ public class TileInspector : Editor
             ChangeTo(Tile.TileTypes.Asteroid);
         }
 
+        if(GUILayout.Button("Trigger"))
+        {
+            ChangeTo(BaseTile.TileTypes.LightTrigger);
+        }
+
         EditorGUILayout.EndHorizontal();
     }
 
     void ChangeTo(Tile.TileTypes newType)
     {
         BaseTile.ChangeTo(newType, (BaseTile)target);
-        //    BaseTile oldTile = (BaseTile)target;
-
-        //    BaseTile newTile = null;
-
-        //    switch(newType)
-        //    {
-        //        case Tile.TileTypes.Tile:
-        //            newTile = oldTile.gameObject.AddComponent<Tile>();
-        //            break;
-
-        //        case Tile.TileTypes.Satalite:
-        //            newTile = oldTile.gameObject.AddComponent<ReflectSatellite>();
-        //            break;
-
-        //        case Tile.TileTypes.LightOutput:
-        //            newTile = oldTile.gameObject.AddComponent<LightOutput>();
-        //            break;
-
-        //        case Tile.TileTypes.LightTarget:
-        //            newTile = oldTile.gameObject.AddComponent<TargetTile>();
-        //            break;
-
-        //        case Tile.TileTypes.Asteroid:
-        //            newTile = oldTile.gameObject.AddComponent<AsteroidTile>();
-        //            break;
-        //    }
-
-        //    if(newTile == null)
-        //    {
-        //        //report an Error and Back out
-        //        Debug.LogError("Could not Change Tile target");
-        //        return;
-        //    }
-        //    oldTile.RemoveTile();
-        //    newTile.AssignNewTile(oldTile.arrayPosition);
-
-        //    DestroyImmediate(oldTile);
-        //}
     }
 }
 
-[CustomEditor(typeof(ReflectSatellite))]
+[CustomEditor(typeof(Satellite))]
 public class ReflectSatelliteInspector : TileInspector
 {
 
@@ -125,14 +87,14 @@ public class AsteroidTileInspector : TileInspector
 
 }
 
-[CustomEditor(typeof(RotateableSatellite))]
-public class RotateableSatelliteInspector : TileInspector
+[CustomEditor(typeof(CombineSatellite))]
+public class CombineSatelliteInspector : TileInspector
 {
 
 }
 
-[CustomEditor(typeof(CombineSatellite))]
-public class CombineSatelliteInspector : TileInspector
+[CustomEditor(typeof(LightTrigger))]
+public class LightTriggerInspector : TileInspector
 {
 
 }

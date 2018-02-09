@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class LightOutput : BaseTile
 {
-    public Vector2Int[] LightPositions;
+    
     public Vector2Int LightDirection;
     public Color OutputColour;
 
+    
+    //Components
     private LineRenderer lineRenderer;
+    private GameObject outputModel;
+
+    //Private Variables
+    private LightHitInfo[] LightPositions;
 
     IEnumerator Start()
     {
@@ -49,7 +55,7 @@ public class LightOutput : BaseTile
         LineRenderer tempRender = referenceObj.GetComponent<LineRenderer>();
 
         GameObject refPrefab = (GameObject)Resources.Load("OutputPrefab");
-        Instantiate(refPrefab, transform);
+        outputModel = Instantiate(refPrefab, transform);
 
         lineRenderer = tempLine.GetComponent<LineRenderer>();
     }
@@ -60,6 +66,12 @@ public class LightOutput : BaseTile
         {
             DestroyImmediate(lineRenderer.gameObject);
             lineRenderer = null;
+        }
+
+        if(outputModel != null)
+        {
+            DestroyImmediate(outputModel);
+            outputModel = null;
         }
 
         creator.PathUpdated -= UpdatePath;
@@ -76,8 +88,6 @@ public class LightOutput : BaseTile
 
         if (lineRenderer != null)
         {
-            bool bInstantBeam = false;
-
             Vector3[] tempArray = new Vector3[LightPositions.Length];
 
             if (bInstantBeam)
@@ -89,11 +99,16 @@ public class LightOutput : BaseTile
             {
                 if(bInstantBeam)
                 {
-                    lineRenderer.SetPosition(i, (Vector2)LightPositions[i]);
+                    lineRenderer.SetPosition(i, (Vector2)LightPositions[i].lightPosition);
+
+                    if(LightPositions[i].hitTile != null)
+                    {
+                        LightPositions[i].hitTile.TileHit(OutputColour);
+                    }
                 }
                 else
                 {
-                    tempArray[i] = (Vector2)LightPositions[i];
+                    tempArray[i] = (Vector2)LightPositions[i].lightPosition;
                 }
                 
             }
@@ -104,31 +119,20 @@ public class LightOutput : BaseTile
             }
         }
     }
-    //1 Unit Per second. 1 unit = 1 square
-    const float moveRate = 20f;
-
+    
     IEnumerator MoveLightBeam(Vector3[] endPositionArray)
     {
-        //Set up inital light beam
-        //Vector3[] currentPoints = new Vector3();
-        
-
         for (int index = 1; index < endPositionArray.Length; index++)
         {
             //Set up the Line Renderer
             lineRenderer.positionCount = index + 1;
             lineRenderer.SetPosition(index - 1, endPositionArray[index - 1]);
 
-            //for(int i = 0; i < index; i++)
-            //{
-            //    lineRenderer.SetPosition(i, endPositionArray[i]);
-            //}
-
             //Setting up end point for its starting position
             Vector3 endPoint = endPositionArray[index - 1];
             
             Vector3 vecToEndPoint = endPoint - endPositionArray[index - 1],
-                vecToCurrentIndex = endPositionArray[index] - endPositionArray[index - 1];
+                vecToCurrentIndex = endPositionArray[index] - endPoint;
 
             //While the end of the light is closer than the next point lets keep pushing it forward
             while(vecToEndPoint.magnitude < vecToCurrentIndex.magnitude)
@@ -138,10 +142,15 @@ public class LightOutput : BaseTile
                 //Update the LineRenderer
                 lineRenderer.SetPosition(index, endPoint);
                 yield return null;
+            }            
+            //Say we have hit our end point
+            if(LightPositions[index].hitTile != null)
+            {
+                LightPositions[index].hitTile.TileHit(OutputColour);
             }
-
-            
         }
+
+        lineRenderer.SetPosition(endPositionArray.Length - 1, endPositionArray[endPositionArray.Length - 1]);
     }
 
     private void OnDrawGizmos()

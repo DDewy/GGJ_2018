@@ -82,7 +82,7 @@ public class LevelEditor : MonoBehaviour {
                 if (target.tileType == BaseTile.TileTypes.Satalite)
                 {
                     ExtractVector2Int(extraVal, out V2Extract);
-                    (target as ReflectSatellite).ReflectDirection = V2Extract;
+                    (target as Satellite).ReflectDirection = V2Extract;
                 }
                 if (target.tileType == BaseTile.TileTypes.LightOutput)
                 {
@@ -167,7 +167,7 @@ public class LevelEditor : MonoBehaviour {
                 //bonus tile information (append with a + sign)
                 if (tile.tileType == BaseTile.TileTypes.Satalite)
                 {
-                    levelValues = levelValues + "+" + (tile as ReflectSatellite).ReflectDirection.ToString();
+                    levelValues = levelValues + "+" + (tile as Satellite).ReflectDirection.ToString();
                 }
                 else if (tile.tileType == BaseTile.TileTypes.LightOutput)
                 {

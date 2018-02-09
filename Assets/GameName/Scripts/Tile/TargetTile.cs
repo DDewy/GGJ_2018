@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetTile : BaseTile
+public class TargetTile : BaseTile, ITileHit
 {
     public Color TargetColour;
     public bool hasLight = false;
@@ -12,9 +12,11 @@ public class TargetTile : BaseTile
         creator.PrePathUpdate += delegate { hasLight = false; };
     }
 
-    public void HitByLight()
+    public void TileHit(Color hitColor)
     {
         hasLight = true;
+
+        //Update any visuals or anything to the gamemode to say that it has been hit
     }
 
     public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)

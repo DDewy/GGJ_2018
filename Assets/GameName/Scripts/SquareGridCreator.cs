@@ -107,58 +107,62 @@ public class SquareGridCreator : MonoBehaviour {
     }
 
 
-    public Vector2Int[] LightBouncePositions(Vector2Int startPosition, Vector2Int aimingDirection, Color lightColor)
+    public LightHitInfo[] LightBouncePositions(Vector2Int startPosition, Vector2Int aimingDirection, Color lightColor)
     {
-        if(aimingDirection == Vector2Int.zero)
+        if (aimingDirection == Vector2Int.zero)
         {
             //If there is no direction then it can go no where, so lets just stop it here otherwise it will be stuck in a infinite loop
-            Vector2Int[] tempArray = { startPosition };
+            LightHitInfo[] tempArray = { new LightHitInfo(startPosition, Vector2Int.zero) };
             return tempArray;
         }
 
-        BaseTile NextPostion = GridArray[startPosition.x][startPosition.y];
-        List<Vector2Int> ReflectPositions = new List<Vector2Int>();
+        BaseTile NextPosition = GridArray[startPosition.x][startPosition.y];
+        List<LightHitInfo> ReflectPositions = new List<LightHitInfo>();
+        //A Temporary List for checking the satelite Positions hit, so it doesn't get stuck in a loop
+        List<Vector2Int> TilesHit = new List<Vector2Int>();
         Vector2Int LastKnownHeading = aimingDirection;
         Vector2Int nullPosition = new Vector2Int(-1, -1);
 
         //Set First Position
-        ReflectPositions.Add(startPosition + WorldOffset);
+        ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
 
-        while (NextPostion != null)
+        while (NextPosition != null)
         {
             //Look into the next Position
             Vector2Int tempPosition = nullPosition;
             
             //Check if this Position is a Satalite
 
-            switch(NextPostion.tileType)
+            switch(NextPosition.tileType)
             {
                 case BaseTile.TileTypes.Satalite:
-                case BaseTile.TileTypes.RotateSatellite:
                     //This is a satalite, this will update our heading
-                    LastKnownHeading = NextPostion.GetComponent<ReflectSatellite>().ReflectDirection;
+                    LastKnownHeading = NextPosition.GetComponent<Satellite>().ReflectDirection;
 
-                    if (ReflectPositions.Contains(NextPostion.arrayPosition + WorldOffset))
+                    if (TilesHit.Contains(NextPosition.arrayPosition))
                     {
                         //Stop this here, since we are going to end up going in a loop
-                        ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
-                        NextPostion = null;
+                        
+                        ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
+                        TilesHit.Add(NextPosition.arrayPosition); //Is this needed? 
+                        NextPosition = null;
                         break;
                     }
                     else
                     {
-                        ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
+                        ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
+                        TilesHit.Add(NextPosition.arrayPosition);
                     }
                     break;
 
                 case BaseTile.TileTypes.LightTarget:
-                    TargetTile tempTarget = NextPostion.GetComponent<TargetTile>();
+                    TargetTile tempTarget = NextPosition.GetComponent<TargetTile>();
 
                     if (lightColor == tempTarget.TargetColour)
                     {
-                        tempTarget.HitByLight();
-                        ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
-                        NextPostion = null;
+                        ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
+                        TilesHit.Add(NextPosition.arrayPosition); //Is this needed? 
+                        NextPosition = null;
                         break;
                     }
                     else
@@ -169,44 +173,48 @@ public class SquareGridCreator : MonoBehaviour {
 
                 case BaseTile.TileTypes.Asteroid:
                     //End Here, Hit an Asteroid
-                    ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
-                    NextPostion = null;
+                    ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
+                    TilesHit.Add(NextPosition.arrayPosition); //Is this needed? 
+                    NextPosition = null;
                     break;
 
                 case BaseTile.TileTypes.CombineSatellite:
                     //Check if we are searching for our selves
-                    if (NextPostion.arrayPosition == startPosition)
+                    if (NextPosition.arrayPosition == startPosition)
                         break;
                     
-                    //Tell Combine sataellite it has been hit 
-                    CombineSatellite tempCombine = NextPostion.GetComponent<CombineSatellite>();
-                    tempCombine.HitByColour(lightColor);
                     //End the Light position for this colour
-                    ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
-                    NextPostion = null;
+                    ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
+                    TilesHit.Add(NextPosition.arrayPosition);
+                    NextPosition = null;
+                    break;
+
+                case BaseTile.TileTypes.LightTrigger:
+                    //Not matter what happens, the light beam should end here
+                    ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
+                    TilesHit.Add(NextPosition.arrayPosition);
+                    NextPosition = null;
                     break;
             }
 
-            if (NextPostion == null)
+            if (NextPosition == null)
                 break;
 
             //Basic Tile, Keep Heading in Direction and Till we reach the end
-            tempPosition = NextPostion.arrayPosition + LastKnownHeading;
+            tempPosition = NextPosition.arrayPosition + LastKnownHeading;
 
             //Checking this is within the size of the array, and has been assigned
             if (tempPosition.x < Width && tempPosition.x >= 0 && tempPosition.y < Height && tempPosition.y >= 0)
             {
-                NextPostion = GridArray[tempPosition.x][tempPosition.y];
+                NextPosition = GridArray[tempPosition.x][tempPosition.y];
             }
             else
             {
-                ReflectPositions.Add(NextPostion.arrayPosition + WorldOffset);
-                NextPostion = null;
+                ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset)); //Reached End
+                NextPosition = null;
                 break;
             }
-
         }
-
         return ReflectPositions.ToArray();
     }
 

@@ -5,8 +5,12 @@ using UnityEngine;
 public abstract class BaseTile : MonoBehaviour
 {
     public SquareGridCreator creator;
-    public Vector2Int arrayPosition;
+    [ShowOnly] public Vector2Int arrayPosition;
     public TileTypes tileType = TileTypes.NULL;
+
+    //1 Unit Per second. 1 unit = 1 square
+    protected const float moveRate = 20f;
+    protected const bool bInstantBeam = false;
 
     public virtual void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
     {
@@ -14,6 +18,12 @@ public abstract class BaseTile : MonoBehaviour
         this.creator = creator;
 
         creator.SetTile(arrayPosition, this);
+
+        //Assign Tile Colour
+
+        //Assign TileType
+
+        //Any Extra stuff such as additional models
     }
 
     public virtual void RemoveTile()
@@ -38,11 +48,7 @@ public abstract class BaseTile : MonoBehaviour
                 break;
 
             case TileTypes.Satalite:
-                newTile = originalTile.gameObject.AddComponent<ReflectSatellite>();
-                break;
-
-            case TileTypes.RotateSatellite:
-                newTile = originalTile.gameObject.AddComponent<RotateableSatellite>();
+                newTile = originalTile.gameObject.AddComponent<Satellite>();
                 break;
 
             case TileTypes.CombineSatellite:
@@ -59,6 +65,10 @@ public abstract class BaseTile : MonoBehaviour
 
             case TileTypes.Asteroid:
                 newTile = originalTile.gameObject.AddComponent<AsteroidTile>();
+                break;
+
+            case TileTypes.LightTrigger:
+                newTile = originalTile.gameObject.AddComponent<LightTrigger>();
                 break;
         }
 
@@ -83,7 +93,25 @@ public abstract class BaseTile : MonoBehaviour
         LightOutput,
         LightTarget,
         Asteroid,
-        RotateSatellite,
-        CombineSatellite
+        CombineSatellite,
+        LightTrigger
+    }
+}
+
+public struct LightHitInfo
+{
+    public Vector2Int lightPosition;
+    public ITileHit hitTile;
+
+    public LightHitInfo(BaseTile tile, Vector2Int WorldOffset)
+    {
+        this.hitTile = tile.GetComponent<ITileHit>();
+        this.lightPosition = tile.arrayPosition + WorldOffset;
+    }
+
+    public LightHitInfo(Vector2Int tilePos, Vector2Int WorldOffset)
+    {
+        this.hitTile = null;
+        this.lightPosition = tilePos + WorldOffset;
     }
 }
