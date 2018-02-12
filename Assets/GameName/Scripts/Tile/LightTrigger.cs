@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class LightTrigger : BaseTile, ITileHit
 {
-    public Color TriggerColour;
+    public TileColor TriggerColour;
     public bool m_NeedExactColour;
 
-    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
+    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator, Color tileColour)
     {
-        base.AssignNewTile(arrayPosition, creator);
-
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-        sprite.color = new Color(0.0f, 1.0f, 1.0f);
+        base.AssignNewTile(arrayPosition, creator, new Color(0f, 1f, 1f));
 
         tileType = TileTypes.LightTrigger;
     }
@@ -22,7 +19,7 @@ public class LightTrigger : BaseTile, ITileHit
         base.RemoveTile();
     }
 
-    public void TileHit(Color hitColour)
+    public void TileHit(Vector2Int HitDirection, TileColor hitColour)
     {
         if(CanPass(hitColour))
         {
@@ -30,19 +27,15 @@ public class LightTrigger : BaseTile, ITileHit
         }
     }
 
-    public bool CanPass(Color inputColor)
+    public bool CanPass(TileColor inputColor)
     {
         if (m_NeedExactColour)
         {
-            if (inputColor == TriggerColour)
-            {
-                return true;
-            }
+            return (inputColor == TriggerColour);
         }
         else
         {
-            return true;
+            return TileColor.ContainColour(inputColor, TriggerColour);
         }
-        return false;
     }
 }

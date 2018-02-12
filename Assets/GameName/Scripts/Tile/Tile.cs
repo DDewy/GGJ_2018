@@ -11,16 +11,9 @@ public class Tile : BaseTile
         
     }
 
-    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
+    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator, Color tileColour)
     {
-        base.AssignNewTile(arrayPosition, creator);
-
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-
-        if (sprite != null)
-        {
-            sprite.color = Color.black;
-        }
+        base.AssignNewTile(arrayPosition, creator, Color.black);
 
         tileType = TileTypes.Tile;
     }

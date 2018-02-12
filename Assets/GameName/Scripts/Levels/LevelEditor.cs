@@ -101,8 +101,10 @@ public class LevelEditor : MonoBehaviour {
                         else if (val.Length > 1)
                         {
                             //target colour
-                            Color col;
+                            TileColor col = new TileColor();
+#if VIV_ToDo
                             extractColor(val, out col);
+#endif
                             (target as LightOutput).OutputColour = col;
                             Debug.Log("Got Colour: " + col);
                         }
@@ -110,8 +112,10 @@ public class LevelEditor : MonoBehaviour {
                 }
                 if (target.tileType == BaseTile.TileTypes.LightTarget)
                 {
-                    Color col;
+                    TileColor col = new TileColor();
+#if VIV_ToDo
                     extractColor(extraVal, out col);
+#endif
                     (target as TargetTile).TargetColour = col;
                     Debug.Log("Got Colour: " + col);
                 }

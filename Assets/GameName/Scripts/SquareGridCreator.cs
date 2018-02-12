@@ -107,7 +107,7 @@ public class SquareGridCreator : MonoBehaviour {
     }
 
 
-    public LightHitInfo[] LightBouncePositions(Vector2Int startPosition, Vector2Int aimingDirection, Color lightColor)
+    public LightHitInfo[] LightBouncePositions(Vector2Int startPosition, Vector2Int aimingDirection, TileColor lightColor)
     {
         if (aimingDirection == Vector2Int.zero)
         {
@@ -126,10 +126,23 @@ public class SquareGridCreator : MonoBehaviour {
         //Set First Position
         ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
 
+        //Try to get to the next position, so we aren't just checking the position we started from already
+        Vector2Int tempPosition = NextPosition.arrayPosition + LastKnownHeading;
+        if (tempPosition.x < Width && tempPosition.x >= 0 && tempPosition.y < Height && tempPosition.y >= 0)
+        {
+            NextPosition = GridArray[tempPosition.x][tempPosition.y];
+        }
+        else
+        {
+            //Position is out of the array break here
+            NextPosition = null;
+        }
+
+
         while (NextPosition != null)
         {
             //Look into the next Position
-            Vector2Int tempPosition = nullPosition;
+            tempPosition = nullPosition;
             
             //Check if this Position is a Satalite
 
@@ -171,13 +184,6 @@ public class SquareGridCreator : MonoBehaviour {
                     }
                     break;
 
-                case BaseTile.TileTypes.Asteroid:
-                    //End Here, Hit an Asteroid
-                    ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
-                    TilesHit.Add(NextPosition.arrayPosition); //Is this needed? 
-                    NextPosition = null;
-                    break;
-
                 case BaseTile.TileTypes.CombineSatellite:
                     //Check if we are searching for our selves
                     if (NextPosition.arrayPosition == startPosition)
@@ -189,10 +195,36 @@ public class SquareGridCreator : MonoBehaviour {
                     NextPosition = null;
                     break;
 
+                
+
+                case BaseTile.TileTypes.LightGate:
+                    //Check if the light can pass through the gate
+                    LightGate tempGate = NextPosition.GetComponent<LightGate>();
+                    if(tempGate.CanPass(LastKnownHeading, lightColor))
+                    {
+                        ReflectPositions.Add(new LightHitInfo(NextPosition.arrayPosition, WorldOffset));
+                    }
+                    else
+                    {
+                        ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
+                        NextPosition = null;
+                    }
+                    break;
+
+                //If the Tile hit ends here and DOES contain ITileHit interface
+                case BaseTile.TileTypes.SatelliteSplitter:
                 case BaseTile.TileTypes.LightTrigger:
                     //Not matter what happens, the light beam should end here
                     ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
                     TilesHit.Add(NextPosition.arrayPosition);
+                    NextPosition = null;
+                    break;
+
+                //If the tile hits an end point but DOES NOT contain the ITileHit interface
+                case BaseTile.TileTypes.Asteroid:
+                    //End Here, Hit an Asteroid
+                    ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
+                    TilesHit.Add(NextPosition.arrayPosition); //Is this needed? 
                     NextPosition = null;
                     break;
             }
@@ -257,7 +289,7 @@ public class SquareGridCreator : MonoBehaviour {
             {
                 GameObject TempTile = Instantiate(SquareRef, transform);
                 TempTile.transform.localPosition = new Vector3Int(i - xOffset, p - yOffset, 0);
-                TempTile.GetComponent<BaseTile>().AssignNewTile(new Vector2Int(i, p), this);
+                TempTile.GetComponent<BaseTile>().AssignNewTile(new Vector2Int(i, p), this, Color.black); //Assign Default Color
             }
         }
         Debug.Log("Reached the end of the Creation Array");
@@ -315,13 +347,39 @@ public class SquareGridCreator : MonoBehaviour {
         Debug.Log("Refreshed Array");
     }
 
-    public void RebuildGrid()
+    public void RefreshGrid()
     {
-        
+        //Initalize Grid
+        BaseTile[][] TempGridRef = new BaseTile[this.Width][];
+
+        for (int i = 0; i < TempGridRef.Length; i++)
+        {
+            TempGridRef[i] = new BaseTile[this.Height];
+        }
+
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            Transform tileTrans = this.transform.GetChild(i);
+            BaseTile tempTile = tileTrans.GetComponent<BaseTile>();
+
+            Debug.Log("FoundTile Position: " + tempTile.arrayPosition, tempTile.gameObject);
+
+            TempGridRef[tempTile.arrayPosition.x][tempTile.arrayPosition.y] = tempTile;
+            tempTile.creator = this;
+        }
+
+        this.GridArray = TempGridRef;
+
+        Debug.Log("Refreshed Array");
     }
 
     public void SetTile(Vector2Int ArrayPos, BaseTile newTile)
     {
+        if(GridArray == null)
+        {
+            RefreshGrid();
+        }
+
         GridArray[ArrayPos.x] [ArrayPos.y] = newTile;
     }
 }

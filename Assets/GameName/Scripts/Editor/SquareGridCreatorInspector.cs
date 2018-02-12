@@ -56,28 +56,8 @@ public class SquareGridCreatorInspector : Editor
     void RefreshGrid()
     {
         SquareGridCreator creator = (SquareGridCreator)target;
-        //Initalize Grid
-        BaseTile[][] TempGridRef = new BaseTile[creator.Width][];
 
-        for (int i = 0; i < TempGridRef.Length; i++)
-        {
-            TempGridRef[i] = new BaseTile[creator.Height];
-        }
-
-        for (int i = 0; i < creator.transform.childCount; i++)
-        {
-            Transform tileTrans = creator.transform.GetChild(i);
-            BaseTile tempTile = tileTrans.GetComponent<BaseTile>();
-
-            Debug.Log("FoundTile Position: " + tempTile.arrayPosition, tempTile.gameObject);
-
-            TempGridRef[tempTile.arrayPosition.x][tempTile.arrayPosition.y] = tempTile;
-            tempTile.creator = creator;
-        }
-
-        creator.GridArray = TempGridRef;
-
-        Debug.Log("Refreshed Array");
+        creator.RefreshGrid();
     }
 
     void RenameChildren()

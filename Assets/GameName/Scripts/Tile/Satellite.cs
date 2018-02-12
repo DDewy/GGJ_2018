@@ -37,16 +37,9 @@ public class Satellite : BaseTile
     }
 
 
-    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
+    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator, Color tileColour)
     {
-        base.AssignNewTile(arrayPosition, creator);
-
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-
-        if (sprite != null)
-        {
-            sprite.color = Color.blue;
-        }
+        base.AssignNewTile(arrayPosition, creator, Color.blue);
 
         tileType = TileTypes.Satalite;
     }
@@ -82,7 +75,7 @@ public class Satellite : BaseTile
         creator.OnPathUpdated();
     }
 
-    static Vector2Int RotateVec(Vector2Int RotateVec, float rotateAngle)
+    public static Vector2Int RotateVec(Vector2Int RotateVec, float rotateAngle)
     {
         Vector2 tempVec = RotateVec;
         tempVec = Quaternion.Euler(0f, 0f, rotateAngle) * tempVec;

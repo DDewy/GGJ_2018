@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetTile : BaseTile, ITileHit
 {
-    public Color TargetColour;
+    public TileColor TargetColour;
     public bool hasLight = false;
 
     private void Start()
@@ -12,23 +12,15 @@ public class TargetTile : BaseTile, ITileHit
         creator.PrePathUpdate += delegate { hasLight = false; };
     }
 
-    public void TileHit(Color hitColor)
+    public void TileHit(Vector2Int HitDirection, TileColor hitColor)
     {
-        hasLight = true;
-
+        hasLight = TileColor.ExactSameColour(hitColor, TargetColour);
         //Update any visuals or anything to the gamemode to say that it has been hit
     }
 
-    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
+    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator, Color tileColour)
     {
-        base.AssignNewTile(arrayPosition, creator);
-
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-
-        if (sprite != null)
-        {
-            sprite.color = Color.green;
-        }
+        base.AssignNewTile(arrayPosition, creator, Color.green);
 
         tileType = TileTypes.LightTarget;
 

@@ -54,6 +54,20 @@ public class TileInspector : Editor
             ChangeTo(BaseTile.TileTypes.LightTrigger);
         }
 
+        if(GUILayout.Button("Gate"))
+        {
+            ChangeTo(BaseTile.TileTypes.LightGate);
+        }
+
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+
+        if(GUILayout.Button("Splitter"))
+        {
+            ChangeTo(BaseTile.TileTypes.SatelliteSplitter);
+        }
+
         EditorGUILayout.EndHorizontal();
     }
 
@@ -95,6 +109,18 @@ public class CombineSatelliteInspector : TileInspector
 
 [CustomEditor(typeof(LightTrigger))]
 public class LightTriggerInspector : TileInspector
+{
+
+}
+
+[CustomEditor(typeof(LightGate))]
+public class LightGateInspector : TileInspector
+{
+
+}
+
+[CustomEditor(typeof(SplitterSatellite))]
+public class SplitterSatelliteInspector : TileInspector
 {
 
 }

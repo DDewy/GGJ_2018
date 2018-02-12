@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CombineSatellite : Satellite, ITileHit
 {
-    private List<Color> inputColours;
+    private List<TileColor> inputColours;
     private LightHitInfo[] LightPositions;
     private LineRenderer lineRenderer;
-    public Color outputColour;
+    public TileColor outputColour;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class CombineSatellite : Satellite, ITileHit
 
     void ClearColours()
     {
-        inputColours = new List<Color>();
+        inputColours = new List<TileColor>();
     }
 
     void RefreshingPaths()
@@ -46,9 +46,10 @@ public class CombineSatellite : Satellite, ITileHit
                 {
                     lineRenderer.SetPosition(i, (Vector2)LightPositions[i].lightPosition);
 
+
                     if(LightPositions[i].hitTile != null)
                     {
-                        LightPositions[i].hitTile.TileHit(outputColour);
+                        LightPositions[i].hitTile.TileHit(LightPositions[i].lightPosition - LightPositions[i - 1].lightPosition, outputColour);
                     }
                 }
                 else
@@ -89,38 +90,32 @@ public class CombineSatellite : Satellite, ITileHit
             }
 
             //Say we have hit our end point
+            if(LightPositions[index].hitTile != null)
+            {
+                LightPositions[index].hitTile.TileHit(Utility.NormalizeVec2Int(LightPositions[index].lightPosition - LightPositions[index - 1].lightPosition), outputColour);
+            }
         }
     }
 
-    public void TileHit(Color newColour)
+    public void TileHit(Vector2Int HitDirection, TileColor newColour)
     {
         inputColours.Add(newColour);
 
         //Update Output Colour
-        outputColour = Color.black;
-        for(int i = 0; i < inputColours.Count; i++)
-        {
-            outputColour += inputColours[i];
-        }
+        outputColour = TileColor.CombineColors(inputColours.ToArray());
+        
 
         if(lineRenderer != null)
         {
-            lineRenderer.material.color = outputColour;
+            lineRenderer.material.color = outputColour.ToColour();
         }
 
         RefreshingPaths();
     }
 
-    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
+    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator, Color tileColour)
     {
-        base.AssignNewTile(arrayPosition, creator);
-
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-        
-        if(sprite != null)
-        {
-            sprite.color = new Color(1.0f, 0.5f, 0.0f); //Should be orange
-        }
+        base.AssignNewTile(arrayPosition, creator, new Color(1.0f, 0.5f, 0f));
 
         tileType = TileTypes.CombineSatellite;
 
@@ -150,5 +145,5 @@ public class CombineSatellite : Satellite, ITileHit
     //Gets Told a Colour is hitting it
 
 
-    //Hook onto PrePathUpdate to clear its path
+    //Hook onto PrePathUpdate to clear its path    
 }

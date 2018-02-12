@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class LightOutput : BaseTile
 {
-    
     public Vector2Int LightDirection;
-    public Color OutputColour;
-
-    
+    public TileColor OutputColour;
+   
     //Components
     private LineRenderer lineRenderer;
     private GameObject outputModel;
@@ -29,7 +27,7 @@ public class LightOutput : BaseTile
 
         if(lineRenderer != null)
         {
-            lineRenderer.material.color = OutputColour;
+            lineRenderer.material.color = OutputColour.ToColour();
         }
 
         yield return new WaitForSeconds(0.1f);
@@ -37,16 +35,9 @@ public class LightOutput : BaseTile
         UpdatePath();
     }
 
-    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
+    public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator, Color tileColour)
     {
-        base.AssignNewTile(arrayPosition, creator);
-
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-
-        if (sprite != null)
-        {
-            sprite.color = Color.red;
-        }
+        base.AssignNewTile(arrayPosition, creator, Color.red);
 
         tileType = TileTypes.LightOutput;
 
@@ -103,7 +94,7 @@ public class LightOutput : BaseTile
 
                     if(LightPositions[i].hitTile != null)
                     {
-                        LightPositions[i].hitTile.TileHit(OutputColour);
+                        LightPositions[i].hitTile.TileHit(Utility.NormalizeVec2Int(LightPositions[i].lightPosition - LightPositions[i - 1].lightPosition), OutputColour);
                     }
                 }
                 else
@@ -135,10 +126,20 @@ public class LightOutput : BaseTile
                 vecToCurrentIndex = endPositionArray[index] - endPoint;
 
             //While the end of the light is closer than the next point lets keep pushing it forward
-            while(vecToEndPoint.magnitude < vecToCurrentIndex.magnitude)
+            while(true)
             {
                 endPoint += vecToCurrentIndex.normalized * Time.deltaTime * moveRate;
+                //Update calculation for a overshoot
                 vecToEndPoint = endPoint - endPositionArray[index - 1];
+
+                //Check if have over shot the target
+                if(vecToEndPoint.magnitude > vecToCurrentIndex.magnitude)
+                {
+                    //Have overshot our point lets start to work on the next point
+                    lineRenderer.SetPosition(index, endPositionArray[index]);
+                    break;
+                }
+
                 //Update the LineRenderer
                 lineRenderer.SetPosition(index, endPoint);
                 yield return null;
@@ -146,7 +147,7 @@ public class LightOutput : BaseTile
             //Say we have hit our end point
             if(LightPositions[index].hitTile != null)
             {
-                LightPositions[index].hitTile.TileHit(OutputColour);
+                LightPositions[index].hitTile.TileHit(Utility.NormalizeVec2Int(LightPositions[index].lightPosition - LightPositions[index - 1].lightPosition), OutputColour);
             }
         }
 

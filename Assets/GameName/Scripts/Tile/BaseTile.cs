@@ -9,10 +9,10 @@ public abstract class BaseTile : MonoBehaviour
     public TileTypes tileType = TileTypes.NULL;
 
     //1 Unit Per second. 1 unit = 1 square
-    protected const float moveRate = 20f;
+    protected const float moveRate = 5f;
     protected const bool bInstantBeam = false;
 
-    public virtual void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator)
+    public virtual void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator, Color tileColour)
     {
         this.arrayPosition = arrayPosition;
         this.creator = creator;
@@ -20,6 +20,9 @@ public abstract class BaseTile : MonoBehaviour
         creator.SetTile(arrayPosition, this);
 
         //Assign Tile Colour
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        if (sprite != null)
+            sprite.color = tileColour;
 
         //Assign TileType
 
@@ -70,6 +73,14 @@ public abstract class BaseTile : MonoBehaviour
             case TileTypes.LightTrigger:
                 newTile = originalTile.gameObject.AddComponent<LightTrigger>();
                 break;
+
+            case TileTypes.LightGate:
+                newTile = originalTile.gameObject.AddComponent<LightGate>();
+                break;
+
+            case TileTypes.SatelliteSplitter:
+                newTile = originalTile.gameObject.AddComponent<SplitterSatellite>();
+                break;
         }
 
         if (newTile == null)
@@ -79,7 +90,7 @@ public abstract class BaseTile : MonoBehaviour
             return null;
         }
         originalTile.RemoveTile();
-        newTile.AssignNewTile(originalTile.arrayPosition, originalTile.creator);
+        newTile.AssignNewTile(originalTile.arrayPosition, originalTile.creator, Color.black); //Tile will sort its self out
 
         DestroyImmediate(originalTile);
         return newTile;
@@ -94,7 +105,9 @@ public abstract class BaseTile : MonoBehaviour
         LightTarget,
         Asteroid,
         CombineSatellite,
-        LightTrigger
+        LightTrigger,
+        LightGate,
+        SatelliteSplitter
     }
 }
 
@@ -103,15 +116,126 @@ public struct LightHitInfo
     public Vector2Int lightPosition;
     public ITileHit hitTile;
 
+    /// <summary>
+    /// Saves Details and DOES CHECK for ITileHit interfaces
+    /// </summary>
+    /// <param name="tile"></param>
+    /// <param name="WorldOffset"></param>
     public LightHitInfo(BaseTile tile, Vector2Int WorldOffset)
     {
         this.hitTile = tile.GetComponent<ITileHit>();
         this.lightPosition = tile.arrayPosition + WorldOffset;
     }
-
+    /// <summary>
+    /// Adds details but DOES NOT CHECK for ITileHit Interface
+    /// </summary>
+    /// <param name="tilePos"></param>
+    /// <param name="WorldOffset"></param>
     public LightHitInfo(Vector2Int tilePos, Vector2Int WorldOffset)
     {
         this.hitTile = null;
         this.lightPosition = tilePos + WorldOffset;
+    }
+}
+
+[System.Serializable]
+public struct TileColor
+{
+    public bool R, G, B;
+
+    public TileColor(bool Red, bool Green, bool Blue)
+    {
+        this.R = Red;
+        this.G = Green;
+        this.B = Blue;
+    }
+
+    public TileColor SetColour(bool Red, bool Green, bool Blue)
+    {
+        this.R = Red;
+        this.G = Green;
+        this.B = Blue;
+
+        return this;
+    }
+
+    public Color ToColour()
+    {
+        return new Color(R ? 1.0f : 0.0f, G ? 1.0f : 0.0f, B ? 1.0f : 0.0f);
+    }
+
+    public override string ToString()
+    {
+        return (R ? "1" : "0") + (G ? "1" : "0") + (B ? "1" : "0");
+    }
+
+    public static TileColor ReadString(string inputValue)
+    {
+        TileColor outputVariable = new TileColor();
+
+        if (inputValue.Length != 3)
+        {
+            Debug.LogError("Can't read string, String need to be 3 Characters long with Using 0 or 1 to describe RGB values");
+            return outputVariable;
+        }
+
+        outputVariable.R = inputValue[0] == 1;
+        outputVariable.G = inputValue[1] == 1;
+        outputVariable.B = inputValue[2] == 1;
+
+        return outputVariable;
+    }
+
+
+    public static bool ExactSameColour(TileColor A, TileColor B)
+    {
+        return A.R == B.R && A.G == B.G == A.B == B.B;
+    }
+
+    public static bool ContainColour(TileColor IncomingColour, TileColor FilterColour)
+    {
+        return (FilterColour.R == true && FilterColour.R == IncomingColour.R) || (FilterColour.G == true && FilterColour.G == IncomingColour.G) || (FilterColour.B == true && FilterColour.B == IncomingColour.B);
+
+        //if (FilterColour.R == true && FilterColour.R == IncomingColour.R) If filter contains Red and Filter and Incoming colour are the same, then it incoming colour does contain Red
+        //    return true;
+
+        //if (FilterColour.G == true && FilterColour.G == IncomingColour.G) If filter contains Green and Filter and Incoming colour are the same, then it incoming colour does contain Green
+        //    return true;
+
+        //if (FilterColour.B == true && FilterColour.B == IncomingColour.B) If filter contains Blue and Filter and Incoming colour are the same, then it incoming colour does contain Blue
+        //    return true;
+    }
+
+    public static bool operator ==(TileColor A, TileColor B)
+    {
+        return ExactSameColour(A, B);
+    }
+
+    public static bool operator !=(TileColor A, TileColor B)
+    {
+        return !ExactSameColour(A, B);
+    }
+
+    public static TileColor CombineColors(TileColor[] colors)
+    {
+        bool red = false, green = false, blue = false;
+
+        for(int i = 0; i < colors.Length; i++)
+        {
+            if (colors[i].R)
+                red = true;
+
+            if (colors[i].G)
+                green = true;
+
+            if (colors[i].B)
+                blue = true;
+
+            if(red && green && blue)
+            {
+                break;
+            }
+        }
+        return new TileColor(red, green, blue);
     }
 }
