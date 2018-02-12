@@ -48,6 +48,12 @@ public class SplitterSatellite : BaseTile, ITileHit
 
     public void TileHit(Vector2Int HitDirection, TileColor inputColour)
     {
+        //If we currently already have some lights hitting us then stop the new one. 
+        if (lightHitPaths[0] != null || lightHitPaths[1] != null)
+        {
+            return;
+        }
+        
         //why doesn't this get hit and debug, please tell me. It is your mission to find out
         
         //Tile Hit, Split that nigger

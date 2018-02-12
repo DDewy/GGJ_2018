@@ -125,6 +125,7 @@ public class SquareGridCreator : MonoBehaviour {
 
         //Set First Position
         ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
+        TilesHit.Add(startPosition);
 
         //Try to get to the next position, so we aren't just checking the position we started from already
         Vector2Int tempPosition = NextPosition.arrayPosition + LastKnownHeading;
@@ -214,6 +215,7 @@ public class SquareGridCreator : MonoBehaviour {
                 //If the Tile hit ends here and DOES contain ITileHit interface
                 case BaseTile.TileTypes.SatelliteSplitter:
                 case BaseTile.TileTypes.LightTrigger:
+                case BaseTile.TileTypes.LightFilter:
                     //Not matter what happens, the light beam should end here
                     ReflectPositions.Add(new LightHitInfo(NextPosition, WorldOffset));
                     TilesHit.Add(NextPosition.arrayPosition);

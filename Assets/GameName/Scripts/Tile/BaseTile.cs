@@ -81,6 +81,10 @@ public abstract class BaseTile : MonoBehaviour
             case TileTypes.SatelliteSplitter:
                 newTile = originalTile.gameObject.AddComponent<SplitterSatellite>();
                 break;
+
+            case TileTypes.LightFilter:
+                newTile = originalTile.gameObject.AddComponent<FilterTile>();
+                break;
         }
 
         if (newTile == null)
@@ -107,7 +111,8 @@ public abstract class BaseTile : MonoBehaviour
         CombineSatellite,
         LightTrigger,
         LightGate,
-        SatelliteSplitter
+        SatelliteSplitter,
+        LightFilter
     }
 }
 

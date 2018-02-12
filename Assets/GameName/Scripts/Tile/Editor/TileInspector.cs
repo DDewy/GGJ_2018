@@ -68,6 +68,11 @@ public class TileInspector : Editor
             ChangeTo(BaseTile.TileTypes.SatelliteSplitter);
         }
 
+        if(GUILayout.Button("Filter"))
+        {
+            ChangeTo(BaseTile.TileTypes.LightFilter);
+        }
+
         EditorGUILayout.EndHorizontal();
     }
 
@@ -121,6 +126,12 @@ public class LightGateInspector : TileInspector
 
 [CustomEditor(typeof(SplitterSatellite))]
 public class SplitterSatelliteInspector : TileInspector
+{
+
+}
+
+[CustomEditor(typeof(FilterTile))]
+public class FilterTileInspector : TileInspector
 {
 
 }
