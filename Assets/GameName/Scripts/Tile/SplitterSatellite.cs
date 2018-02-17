@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SplitterSatellite : BaseTile, ITileHit
 {
+    [Tooltip("1 is 45 Degrees in inputDirection, 2 is 90 Degrees T Shape, 3 is 135 Degrees")][Range(1, 3)] public int SplitAngle;
     private LineRenderer[] lineRenderers;
     private LightHitInfo[][] lightHitPaths;
 

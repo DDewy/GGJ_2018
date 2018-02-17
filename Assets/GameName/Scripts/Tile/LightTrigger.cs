@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightTrigger : BaseTile, ITileHit
 {
     public TileColor TriggerColour;
+    public 
     public bool m_NeedExactColour;
 
     public override void AssignNewTile(Vector2Int arrayPosition, SquareGridCreator creator, Color tileColour)

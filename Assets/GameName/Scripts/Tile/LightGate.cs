@@ -34,6 +34,8 @@ public class LightGate : BaseTile
             if(TileColor.ContainColour(inputColour, gateColour))
                 return HitDirection == GateDirection;
         }
+
+
         return false;
     }
 
